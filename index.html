@@ -14,38 +14,71 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* Ticker Styles for the Living List */
-        .living-list-container {
-            background: var(--slate-light);
-            padding: 2rem 0;
-            overflow: hidden;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
+        /* Targeted Footer Enhancements */
+        .site-footer {
+            padding: 6rem 0 3rem;
+            background: var(--slate-light); /* Distinct footer background */
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
         }
-        .ticker-wrapper {
+        .footer-grid {
             display: flex;
-            white-space: nowrap;
-            animation: ticker 30s linear infinite;
-        }
-        .ticker-item {
-            display: inline-flex;
+            flex-direction: column;
             align-items: center;
-            padding: 0 40px;
+            gap: 4rem;
+        }
+        .footer-brand .logo-text {
+            color: var(--arctic-navy);
+            display: block;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        .footer-contact-info {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1.4rem;
+        }
+        .social-icons a {
+            color: var(--arctic-navy);
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: var(--greenland-red);
+        }
+        .footer-support {
+            max-width: 600px;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+        .footer-support h5 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--arctic-navy);
+        }
+        .support-details {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .footer-bottom {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
             font-size: 0.85rem;
             color: var(--text-muted);
-            font-weight: 500;
         }
-        .ticker-item i { margin-right: 10px; color: var(--greenland-red); }
-        .ticker-date { font-weight: 700; margin-right: 10px; color: var(--arctic-navy); }
-
-        @keyframes ticker {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        .footer-bottom a {
+            color: var(--arctic-navy);
+            text-decoration: none;
+            font-weight: 600;
         }
-        
-        /* Making pillars clickable */
-        .pillar-link { text-decoration: none; color: inherit; display: block; }
-        .pillar:hover { border-color: var(--greenland-red); transform: translateY(-5px); }
     </style>
 </head>
 <body class="home-page">
@@ -83,11 +116,6 @@
                     <a href="insights.html" class="lang-content" data-lang="english">Insights</a>
                     <a href="insights.html" class="lang-content" data-lang="greenlandic">Paasisimasat</a>
                     <a href="insights.html" class="lang-content" data-lang="danish">Indblik</a>
-                </li>
-                <li>
-                    <a href="experts.html" class="lang-content" data-lang="english">Expert Panel</a>
-                    <a href="experts.html" class="lang-content" data-lang="greenlandic">Ilisimasallit</a>
-                    <a href="experts.html" class="lang-content" data-lang="danish">Ekspertpanel</a>
                 </li>
             </ul>
 
@@ -136,63 +164,55 @@
                 
                 <div class="mission-statement text-center">
                     <div class="lang-content" data-lang="english">
-                        <p class="lead-text">Integrating civil society into a democratic, educational, and expert-led discussion on foreign policy.</p>
+                        <p class="lead-text" style="font-weight: 600; font-size: 1.4rem; margin-bottom: 2rem;">Integrating civil society into a democratic, educational, and expert-led discussion on foreign policy.</p>
                         <p>The Greenland Foreign Policy Society is a voluntary association with the aim of promoting knowledge of and increasing interest in foreign policy issues in Greenland. We exist to create a space where expertise and civil society meet to share qualified opinions and analysis.</p>
-                        <p>Our purpose is to facilitate discussions, publish insights, and ensure a present voice in international fora.</p>
-                        <p class="sub-text">The association is independent of the public sector, political parties, as well as business and organizational interests.</p>
+                        <p>Our purpose is to facilitate discussions, publish insights, and ensure a present voice in international fora. We provide our members and the public with direct access to foreign policy through contact with diplomatic missions and defense establishments, ensuring that civil society remains a conscious participant in international matters.</p>
+                        <p class="sub-text" style="font-style: italic; opacity: 0.9; margin-top: 2rem;">The association is independent of the public sector, political parties, as well as business and organizational interests. We do not take positions on political issues, but function exclusively as a mediator of information, debate, and contacts.</p>
                     </div>
 
                     <div class="lang-content" data-lang="greenlandic">
-                        <p class="lead-text">Inuiaqatigiit nipaat ilisimasallu tunngavigalugit oqallinnermut ilanngunneri.</p>
-                        <p>Anguniagaraarput nunanut allanut tunngasut ilisimaneqarnerulernissaat soqutigineqarnerulernissaallu. Peqatigiiffik oqalliffittut attaveqaatitullu inissisimavoq, nunarsuarmi oqallinnerni peqataasarluni.</p>
-                        <p class="sub-text">Peqatigiiffik naalakkersuinikkut arlaannulluunniit atanngilaq, inuiaqatigiit akornanni oqalliffittut arlaannulluunniit pituttorsimanngitsutut inissisimasuulluni.</p>
+                        <p class="lead-text" style="font-weight: 600; font-size: 1.4rem; margin-bottom: 2rem;">Inuiaqatigiit nipaat ilisimasallu tunngavigalugit oqallinnermut ilanngunneri.</p>
+                        <p>Nunanut Allanut Politikkeqarnermut Peqatigiiffik nammineq piumassutsimik ingerlatatut siunertaqarpoq nunanut allanut tunngasut ilisimaneqarnerulernissaat soqutigineqarnerulernissaallu. Peqatigiiffik oqalliffittut attaveqaatitullu inissisimavoq, ilisimasallit inuiaqatigiillu akornanni qualified-mik isummanik misissueqqissaarnernillu share-iiffittut.</p>
+                        <p>Anguniagaraarput oqaloqatigiinnerit, isummanik saqqummersitsinerit nunat tamalaat akornanni nipaalluta peqataaneq. Ilaasortavut inuiaqatigiillu nunanut allanut tunngasunik toqqaannartumik attaveqalersittarpavut, diplomat-itut aallartitaqarfiit illersornissaqarfiullu attaviginerisigut.</p>
+                        <p class="sub-text" style="font-style: italic; opacity: 0.9; margin-top: 2rem;">Peqatigiiffik naalakkersuinikkut arlaannulluunniit atanngilaq, inuiaqatigiit akornanni oqalliffittut arlaannulluunniit pituttorsimanngitsutut inissisimasuulluni. Politikikkut isummanik aaliangersimasunik tigummiassanngilagut, paasissutissanilli, oqallinnermik attaveqarnermillu siammartiterisuinnaalluta.</p>
                     </div>
 
                     <div class="lang-content" data-lang="danish">
-                        <p class="lead-text">Integration af civilsamfundet i en demokratisk, uddannende og ekspertbaseret debat om udenrigspolitik.</p>
-                        <p>Grønlands udenrigspolitiske forening er en frivillig forening med det formål at fremme kendskabet til og øge interessen for udenrigspolitiske emner i Grønland.</p>
-                        <p>Vores formål er at facilitere drøftelser og sikre en aktiv tilstedeværelse i internationale fora gennem formidling af viden og debat.</p>
-                        <p class="sub-text">Foreningen er uafhængig af både det offentlige, politiske partier samt erhvervsmæssige og organisatoriske interesser.</p>
+                        <p class="lead-text" style="font-weight: 600; font-size: 1.4rem; margin-bottom: 2rem;">Integration af civilsamfundet i en demokratisk, uddannende og ekspertbaseret debat om udenrigspolitik.</p>
+                        <p>Grønlands udenrigspolitiske forening er en frivillig forening med det formål at fremme kendskabet til og øge interessen for udenrigspolitiske emner i Grønland. Vi eksisterer for at skabe et rum, hvor ekspertise og civilsamfund mødes for at dele kvalificerede holdninger og analyser.</p>
+                        <p>Vores formål er at facilitere drøftelser, udgive indblik og sikre en aktiv tilstedeværelse i internationale fora. Vi giver vores medlemmer og offentligheden direkte adgang til udenrigspolitik gennem kontakt med diplomatiske missioner og forsvarsinstitutioner.</p>
+                        <p class="sub-text" style="font-style: italic; opacity: 0.9; margin-top: 2rem;">Foreningen er uafhængig af både det offentlige, politiske partier samt erhvervsmæssige og organisatoriske interesser. Vi tager ikke stilling til politiske spørgsmål, men fungerer udelukkende som formidler af information, debat og kontakter.</p>
                     </div>
                 </div>
             </div>
 
+            
             <div class="container">
                 <div class="pillars-grid reveal">
-                    <a href="experts.html" class="pillar-link">
-                        <div class="pillar">
-                            <i class="fa-solid fa-pen-nib"></i>
-                            <h4 class="lang-content" data-lang="english">Engagement</h4>
-                            <h4 class="lang-content" data-lang="greenlandic">Peqataaneq</h4>
-                            <h4 class="lang-content" data-lang="danish">Engagement</h4>
-                            <p class="lang-content" data-lang="english">Facilitating active engagement between civil society, experts, and defense professionals.</p>
-                            <p class="lang-content" data-lang="greenlandic">Inuiaqatigiit ilisimasallillu akornanni peqataatitsineq siuarsarparput.</p>
-                            <p class="lang-content" data-lang="danish">Vi faciliterer engagement mellem civilsamfund, eksperter og fagfolk.</p>
-                        </div>
-                    </a>
-
-                    <a href="insights.html" class="pillar-link">
-                        <div class="pillar">
-                            <i class="fa-solid fa-comment-dots"></i> 
-                            <h4 class="lang-content" data-lang="english">Discussion</h4>
-                            <h4 class="lang-content" data-lang="greenlandic">Oqaloqatigiinneq</h4>
-                            <h4 class="lang-content" data-lang="danish">Debat</h4>
-                            <p class="lang-content" data-lang="english">Maintaining a professional interface with international fora and global actors.</p>
-                            <p class="lang-content" data-lang="greenlandic">Nunat tamalaat akornanni oqalliffinnut ilisimasalinnullu attaveqaataavugut.</p>
-                            <p class="lang-content" data-lang="danish">Vi opretholder en professionel grænseflade til internationale fora og globale aktører.</p>
-                        </div>
-                    </a>
-
-                    <a href="events.html" class="pillar-link">
-                        <div class="pillar">
-                            <i class="fa-solid fa-building-columns"></i>
-                            <h4 class="lang-content" data-lang="english">Events</h4>
-                            <h4 class="lang-content" data-lang="greenlandic">Pisartut</h4>
-                            <h4 class="lang-content" data-lang="danish">Events</h4>
-                            <p class="lang-content" data-lang="english">Listing former and future events, facilitating access to diplomatic missions.</p>
-                            <p class="lang-content" data-lang="greenlandic">Inuiaqatigiinnut diplomatinullu attaveqarfinnik pilersitsisarpugut.</p>
-                            <p class="lang-content" data-lang="danish">Oversigt over tidligere og fremtidige events og diplomatiske missioner.</p>
-                        </div>
+                    <div class="pillar">
+                        <i class="fa-solid fa-pen-nib"></i>
+<h4 class="lang-content" data-lang="english">Perspectives</h4>
+        <h4 class="lang-content" data-lang="greenlandic">Isiginnittaatsut</h4>
+        <h4 class="lang-content" data-lang="danish">Perspektiver</h4>
+        <p class="lang-content" data-lang="english">Facilitating active engagement between the public, experts, and defense professionals.</p>
+        <p class="lang-content" data-lang="greenlandic">Inuiaqatigiit, ilisimasallit illersornissaqarfimmilu suliallit akornanni peqataatitsineq sulissutigaarput.</p>
+        <p class="lang-content" data-lang="danish">Vi faciliterer aktivt engagement mellem offentligheden, eksperter og fagfolk i forsvaret.</p>                    </div>
+                    <div class="pillar">
+                        <i class="fa-solid fa-comment-dots"></i> 
+                        <h4 class="lang-content" data-lang="english">Discussion</h4>
+                        <h4 class="lang-content" data-lang="greenlandic">Oqaloqatigiinneq</h4>
+                        <h4 class="lang-content" data-lang="danish">Debat</h4>
+			<p class="lang-content" data-lang="english">Working for Greenlandic perspectives and presence in international discussions and global fora.</p>
+        		<p class="lang-content" data-lang="greenlandic">Nunat tamalaat oqallinnerini Kalaallit Nunaata isiginnittaasai peqataanissaalu sulissutigaavut.</p>
+        		<p class="lang-content" data-lang="danish">Vi arbejder for grønlandske perspektiver og tilstedeværelse i internationale drøftelser og fora.</p>                    </div>
+                    <div class="pillar">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <h4 class="lang-content" data-lang="english">Events</h4>
+                        <h4 class="lang-content" data-lang="greenlandic">Pisartut</h4>
+                        <h4 class="lang-content" data-lang="danish">Events</h4>
+<p class="lang-content" data-lang="english">Organizing public events and discussions in cooperation with foreign policy and security actors.</p>
+        <p class="lang-content" data-lang="greenlandic">Nunanut allanut isumannaallisaanermullu suliallit peqatigalugit tamanut ammasumik pisartunik oqallinnernillu aaqqissuussisarpugut.</p>
+        <p class="lang-content" data-lang="danish">Arrangerer offentlige events og debatter i samarbejde med udenrigs- og sikkerhedspolitiske aktører.</p>                    </div>
                     </a>
                 </div>
             </div>
@@ -204,12 +224,8 @@
                 <div class="ticker-item"><span class="ticker-date">JAN 2026</span><i class="fa-solid fa-calendar-check"></i> Event: Nuuk Dialogue Forum</div>
                 <div class="ticker-item"><span class="ticker-date">DEC 2025</span><i class="fa-solid fa-file-lines"></i> Insight: Fisheries Policy Review</div>
                 <div class="ticker-item"><span class="ticker-date">NOV 2025</span><i class="fa-solid fa-calendar-check"></i> Event: NATO Greenland Briefing</div>
-                <div class="ticker-item"><span class="ticker-date">OCT 2025</span><i class="fa-solid fa-file-lines"></i> Article: Mineral Diplomacy 101</div>
                 <div class="ticker-item"><span class="ticker-date">FEB 2026</span><i class="fa-solid fa-file-lines"></i> Article: Arctic Security Update</div>
                 <div class="ticker-item"><span class="ticker-date">JAN 2026</span><i class="fa-solid fa-calendar-check"></i> Event: Nuuk Dialogue Forum</div>
-                <div class="ticker-item"><span class="ticker-date">DEC 2025</span><i class="fa-solid fa-file-lines"></i> Insight: Fisheries Policy Review</div>
-                <div class="ticker-item"><span class="ticker-date">NOV 2025</span><i class="fa-solid fa-calendar-check"></i> Event: NATO Greenland Briefing</div>
-                <div class="ticker-item"><span class="ticker-date">OCT 2025</span><i class="fa-solid fa-file-lines"></i> Article: Mineral Diplomacy 101</div>
             </div>
         </section>
     </main>
@@ -219,19 +235,43 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <span class="logo-text">NUNANUT</span>
-                    <p class="lang-content" data-lang="english">Independent analysis and dialogue on Greenland's role in the world.</p>
-                    <p class="lang-content" data-lang="greenlandic">Kalaallit Nunaata nunarsuarmi inissisimanera pillugu oqalliffik arlaannulluunniit atanngitsoq.</p>
-                    <p class="lang-content" data-lang="danish">Uafhængig analyse og debat om Grønlands rolle i verden.</p>
+                    <div class="footer-contact-info">
+                        <p>3900 Nuuk, Greenland</p>
+                        <p>udenrigspolitiskforening@outlook.com</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/NunanutAllanutPolitikkeqarnermutPeqatigiiffik" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://gl.linkedin.com/company/den-udenrigspolitiske-forening-i-groenland" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
                 </div>
-                <div class="footer-contact">
-                    <h5 class="lang-content" data-lang="english">Contact</h5>
-                    <h5 class="lang-content" data-lang="greenlandic">Attavissaq</h5>
-                    <h5 class="lang-content" data-lang="danish">Kontakt</h5>
-                    <p>Email: kontakt@nunanut.gl</p>
+                
+                <div class="footer-support">
+                    <h5 class="lang-content" data-lang="english">Support Our Work</h5>
+                    <h5 class="lang-content" data-lang="greenlandic">Tapersiiffit</h5>
+                    <h5 class="lang-content" data-lang="danish">Støt os</h5>
+                    
+                    <div class="support-details">
+                        <p class="lang-content" data-lang="english">
+                            Do you think our mission deserves your support? <br>
+                            Bank Transfer: <strong>Reg: 6471, Acc: 5906366</strong> <br>
+                            Label your transfer: <strong>"Support"</strong>
+                        </p>
+                        <p class="lang-content" data-lang="greenlandic">
+                            Suliagut tapersersugassatut isigaigit? <br>
+                            Aningaasat nuunneqarsinnaapput: <strong>Reg: 6471, Acc: 5906366</strong> <br>
+                            Nalunaaqutsiuk: <strong>"Support"</strong>
+                        </p>
+                        <p class="lang-content" data-lang="danish">
+                            Mener du vores mission fortjener din støtte? <br>
+                            Bankoverførsel: <strong>Reg: 6471, Acc: 5906366</strong> <br>
+                            Mærk overførslen: <strong>"Support"</strong>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom text-center">
-                <p>&copy; 2026 Greenland Foreign Policy Society</p>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Greenland Foreign Policy Society | <a href="about.html">Articles of Association</a></p>
             </div>
         </div>
     </footer>
@@ -290,11 +330,6 @@
             
             if(openBtn) openBtn.addEventListener('click', () => mobileMenu.classList.add('active'));
             if(closeBtn) closeBtn.addEventListener('click', () => mobileMenu.classList.remove('active'));
-            
-            const mobileLinks = document.querySelectorAll('.mobile-links a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => mobileMenu.classList.remove('active'));
-            });
         });
     </script>
 </body>
