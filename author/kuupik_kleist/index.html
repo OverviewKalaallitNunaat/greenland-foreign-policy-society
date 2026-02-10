@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malik Peter Koch Hansen | NUNANUT</title>
+    
+    <link rel="stylesheet" href="../../style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="author-page"> <nav class="site-nav scrolled" id="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="../../index.html" class="logo-text">NUNANUT</a>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="../../index.html#mission" class="lang-content active" data-lang="english">Mission</a>
+                </li>
+                <li>
+                    <a href="../../insights.html" class="lang-content active" data-lang="english">Insights</a>
+                </li>
+            </ul>
+            <div class="nav-right">
+                <div class="language-selector">
+                    <button class="lang-button" data-lang="greenlandic">KL</button>
+                    <button class="lang-button" data-lang="danish">DA</button>
+                    <button class="lang-button active" data-lang="english">EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bio-header">
+        <div class="container narrow">
+            <span class="bio-role">Chair of the Board</span>
+            <h1 class="section-title">Malik Peter Koch Hansen</h1>
+            <div class="hero-divider"></div>
+        </div>
+    </header>
+
+    <main class="container bio-container">
+        <aside class="bio-sidebar">
+            <img src="malik.jpg" alt="Malik Peter Koch Hansen" class="profile-photo">
+
+            <ul class="contact-list">
+                <li><i class="fa-solid fa-envelope"></i> malik@nunanut.gl</li>
+                <li>
+                    <i class="fa-brands fa-linkedin"></i> 
+                    <a href="#" style="text-decoration: none; color: inherit;">LinkedIn Profile</a>
+                </li>
+            </ul>
+        </aside>
+
+        <section class="bio-text">
+            <h3>Biography</h3>
+            <p>Malik Peter Koch Hansen serves as the Chair of the Greenland Foreign Policy Society. With a deep commitment to fostering transparent and expert-led dialogue, Malik leads the organization in its mission to integrate civil society into the geopolitical discussions that shape the High North.</p>
+            
+            <p>Under his leadership, the Society has grown into a vital platform for analysts, diplomats, and the public to exchange views on Greenland’s evolving role in international affairs.</p>
+
+<h3 style="margin-top: 4rem;">Recent Insights</h3>
+<div class="insights-feed" style="grid-template-columns: 1fr;">
+<span style="display:none;">🆕</span>
+        <a href="../../articles/2026-06-17/article.html" class="insight-item-link">
+            <div class="insight-card-horizontal">
+                <div class="insight-card-content">
+                    <span class="card-meta-top">COMMENTARY</span>
+                    <h4>Diplomatic Horizons: Greenland’s New Voice</h4>
+                    <span class="date">20 May 2026</span>
+                </div>
+                <img src="../../articles/2026-06-17/small.jpg" class="insight-card-image" alt="Thumbnail">
+            </div>
+        </a>
+
+    <a href="../../articles/2026-05-16_arctic_trade/" class="insight-item-link">
+        <div class="insight-card-horizontal">
+            <div class="insight-card-content">
+                <span class="card-meta-top" style="margin-bottom: 0.5rem; display: block;">Analysis</span>
+                <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">The Future of Arctic Trade Routes</h4>
+                <span class="date">16 May 2026</span>
+            </div>
+            <img src="../../articles/2026-05-16_arctic_trade/arctic-view_smal.jpg" alt="Arctic view" class="insight-card-image">
+        </div>
+    </a>
+</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <span class="logo-text">NUNANUT</span>
+                <p>&copy; 2026 Greenland Foreign Policy Society</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language selection persistence logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-button');
+            const STORAGE_KEY = 'nunanut_global_lang'; 
+
+            function setLanguage(lang) {
+                localStorage.setItem(STORAGE_KEY, lang);
+                langButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+            }
+
+            const savedLang = localStorage.getItem(STORAGE_KEY) || 'english';
+            setLanguage(savedLang);
+
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => setLanguage(button.dataset.lang));
+            });
+        });
+    </script>
+</body>
+</html>
