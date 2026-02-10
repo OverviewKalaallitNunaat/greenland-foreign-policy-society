@@ -12,6 +12,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Ticker Styles for the Living List */
+        .living-list-container {
+            background: var(--slate-light);
+            padding: 2rem 0;
+            overflow: hidden;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        .ticker-wrapper {
+            display: flex;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+        }
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 40px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .ticker-item i { margin-right: 10px; color: var(--greenland-red); }
+        .ticker-date { font-weight: 700; margin-right: 10px; color: var(--arctic-navy); }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* Making pillars clickable */
+        .pillar-link { text-decoration: none; color: inherit; display: block; }
+        .pillar:hover { border-color: var(--greenland-red); transform: translateY(-5px); }
+    </style>
 </head>
 <body class="home-page">
 
@@ -19,11 +54,15 @@
         <button class="mobile-close" id="mobile-menu-close">&times;</button>
         <div class="mobile-links">
             <a href="index.html" class="lang-content" data-lang="english">Home</a>
-            <a href="index.html" class="lang-content" data-lang="greenlandic">Angerlarsimaffik</a>
+            <a href="index.html" class="lang-content" data-lang="greenlandic">Saaq</a>
             <a href="index.html" class="lang-content" data-lang="danish">Hjem</a>
             
+            <a href="#mission" class="lang-content" data-lang="english">Mission</a>
+            <a href="#mission" class="lang-content" data-lang="greenlandic">Anguniakkavut</a>
+            <a href="#mission" class="lang-content" data-lang="danish">Mission</a>
+            
             <a href="insights.html" class="lang-content" data-lang="english">Insights</a>
-            <a href="insights.html" class="lang-content" data-lang="greenlandic">Isummat</a>
+            <a href="insights.html" class="lang-content" data-lang="greenlandic">Paasisimasat</a>
             <a href="insights.html" class="lang-content" data-lang="danish">Indblik</a>
         </div>
     </div>
@@ -42,13 +81,13 @@
                 </li>
                 <li>
                     <a href="insights.html" class="lang-content" data-lang="english">Insights</a>
-                    <a href="insights.html" class="lang-content" data-lang="greenlandic">Isummat</a>
+                    <a href="insights.html" class="lang-content" data-lang="greenlandic">Paasisimasat</a>
                     <a href="insights.html" class="lang-content" data-lang="danish">Indblik</a>
                 </li>
                 <li>
-                    <a href="#engagements" class="lang-content" data-lang="english">Engagements</a>
-                    <a href="#engagements" class="lang-content" data-lang="greenlandic">Pisarsimasut</a>
-                    <a href="#engagements" class="lang-content" data-lang="danish">Engagementer</a>
+                    <a href="experts.html" class="lang-content" data-lang="english">Expert Panel</a>
+                    <a href="experts.html" class="lang-content" data-lang="greenlandic">Ilisimasallit</a>
+                    <a href="experts.html" class="lang-content" data-lang="danish">Ekspertpanel</a>
                 </li>
             </ul>
 
@@ -120,34 +159,57 @@
 
             <div class="container">
                 <div class="pillars-grid reveal">
-                    <div class="pillar">
-                        <i class="fa-solid fa-pen-nib"></i>
-                        <h4 class="lang-content" data-lang="english">Engagement</h4>
-                        <h4 class="lang-content" data-lang="greenlandic">Peqataaneq</h4>
-                        <h4 class="lang-content" data-lang="danish">Engagement</h4>
-                        <p class="lang-content" data-lang="english">Cultivating public interest through qualified analysis and specialized articles.</p>
-                        <p class="lang-content" data-lang="greenlandic">Inuiaqatigiit soqutiginninnerat nukittorsarparput ilisimasat oqallinnerillu aqqutigalugit.</p>
-                        <p class="lang-content" data-lang="danish">Vi fremmer offentlighedens interesse gennem kvalificerede analyser og fagartikler.</p>
-                    </div>
-                    <div class="pillar">
-                        <i class="fa-solid fa-comment-dots"></i> 
-                        <h4 class="lang-content" data-lang="english">Discussion</h4>
-                        <h4 class="lang-content" data-lang="greenlandic">Oqaloqatigiinneq</h4>
-                        <h4 class="lang-content" data-lang="danish">Debat</h4>
-                        <p class="lang-content" data-lang="english">Maintaining a professional interface with international fora and global actors.</p>
-                        <p class="lang-content" data-lang="greenlandic">Nunat tamalaat akornanni oqalliffinnut ilisimasalinnullu attaveqaataavugut.</p>
-                        <p class="lang-content" data-lang="danish">Vi opretholder en professionel grænseflade til internationale fora og globale aktører.</p>
-                    </div>
-                    <div class="pillar">
-                        <i class="fa-solid fa-building-columns"></i>
-                        <h4 class="lang-content" data-lang="english">Events</h4>
-                        <h4 class="lang-content" data-lang="greenlandic">Pisartut</h4>
-                        <h4 class="lang-content" data-lang="danish">Events</h4>
-                        <p class="lang-content" data-lang="english">Facilitating civil society access to diplomatic missions and defense establishments.</p>
-                        <p class="lang-content" data-lang="greenlandic">Inuiaqatigiinnut diplomatinullu attaveqarfinnik pilersitsisarpugut.</p>
-                        <p class="lang-content" data-lang="danish">Vi faciliterer adgang til diplomatiske missioner og forsvarsinstitutioner.</p>
-                    </div>
+                    <a href="experts.html" class="pillar-link">
+                        <div class="pillar">
+                            <i class="fa-solid fa-pen-nib"></i>
+                            <h4 class="lang-content" data-lang="english">Engagement</h4>
+                            <h4 class="lang-content" data-lang="greenlandic">Peqataaneq</h4>
+                            <h4 class="lang-content" data-lang="danish">Engagement</h4>
+                            <p class="lang-content" data-lang="english">Facilitating active engagement between civil society, experts, and defense professionals.</p>
+                            <p class="lang-content" data-lang="greenlandic">Inuiaqatigiit ilisimasallillu akornanni peqataatitsineq siuarsarparput.</p>
+                            <p class="lang-content" data-lang="danish">Vi faciliterer engagement mellem civilsamfund, eksperter og fagfolk.</p>
+                        </div>
+                    </a>
+
+                    <a href="insights.html" class="pillar-link">
+                        <div class="pillar">
+                            <i class="fa-solid fa-comment-dots"></i> 
+                            <h4 class="lang-content" data-lang="english">Discussion</h4>
+                            <h4 class="lang-content" data-lang="greenlandic">Oqaloqatigiinneq</h4>
+                            <h4 class="lang-content" data-lang="danish">Debat</h4>
+                            <p class="lang-content" data-lang="english">Maintaining a professional interface with international fora and global actors.</p>
+                            <p class="lang-content" data-lang="greenlandic">Nunat tamalaat akornanni oqalliffinnut ilisimasalinnullu attaveqaataavugut.</p>
+                            <p class="lang-content" data-lang="danish">Vi opretholder en professionel grænseflade til internationale fora og globale aktører.</p>
+                        </div>
+                    </a>
+
+                    <a href="events.html" class="pillar-link">
+                        <div class="pillar">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <h4 class="lang-content" data-lang="english">Events</h4>
+                            <h4 class="lang-content" data-lang="greenlandic">Pisartut</h4>
+                            <h4 class="lang-content" data-lang="danish">Events</h4>
+                            <p class="lang-content" data-lang="english">Listing former and future events, facilitating access to diplomatic missions.</p>
+                            <p class="lang-content" data-lang="greenlandic">Inuiaqatigiinnut diplomatinullu attaveqarfinnik pilersitsisarpugut.</p>
+                            <p class="lang-content" data-lang="danish">Oversigt over tidligere og fremtidige events og diplomatiske missioner.</p>
+                        </div>
+                    </a>
                 </div>
+            </div>
+        </section>
+
+        <section class="living-list-container">
+            <div class="ticker-wrapper">
+                <div class="ticker-item"><span class="ticker-date">FEB 2026</span><i class="fa-solid fa-file-lines"></i> Article: Arctic Security Update</div>
+                <div class="ticker-item"><span class="ticker-date">JAN 2026</span><i class="fa-solid fa-calendar-check"></i> Event: Nuuk Dialogue Forum</div>
+                <div class="ticker-item"><span class="ticker-date">DEC 2025</span><i class="fa-solid fa-file-lines"></i> Insight: Fisheries Policy Review</div>
+                <div class="ticker-item"><span class="ticker-date">NOV 2025</span><i class="fa-solid fa-calendar-check"></i> Event: NATO Greenland Briefing</div>
+                <div class="ticker-item"><span class="ticker-date">OCT 2025</span><i class="fa-solid fa-file-lines"></i> Article: Mineral Diplomacy 101</div>
+                <div class="ticker-item"><span class="ticker-date">FEB 2026</span><i class="fa-solid fa-file-lines"></i> Article: Arctic Security Update</div>
+                <div class="ticker-item"><span class="ticker-date">JAN 2026</span><i class="fa-solid fa-calendar-check"></i> Event: Nuuk Dialogue Forum</div>
+                <div class="ticker-item"><span class="ticker-date">DEC 2025</span><i class="fa-solid fa-file-lines"></i> Insight: Fisheries Policy Review</div>
+                <div class="ticker-item"><span class="ticker-date">NOV 2025</span><i class="fa-solid fa-calendar-check"></i> Event: NATO Greenland Briefing</div>
+                <div class="ticker-item"><span class="ticker-date">OCT 2025</span><i class="fa-solid fa-file-lines"></i> Article: Mineral Diplomacy 101</div>
             </div>
         </section>
     </main>
@@ -178,27 +240,20 @@
         document.addEventListener('DOMContentLoaded', function() {
             const langButtons = document.querySelectorAll('.lang-button');
             const langContents = document.querySelectorAll('.lang-content');
-            
-            // CRITICAL: Must be identical across index.html and insights.html
             const STORAGE_KEY = 'nunanut_global_lang'; 
 
             function setLanguage(lang) {
                 localStorage.setItem(STORAGE_KEY, lang);
-                
                 langButtons.forEach(btn => {
                     btn.classList.toggle('active', btn.dataset.lang === lang);
                 });
-
                 langContents.forEach(content => {
                     content.classList.toggle('active', content.dataset.lang === lang);
                 });
-
-                // Update accessibility tag
                 const htmlLang = lang === 'greenlandic' ? 'kl' : lang === 'danish' ? 'da' : 'en';
                 document.documentElement.lang = htmlLang;
             }
 
-            // Persistence Initialization
             const savedLang = localStorage.getItem(STORAGE_KEY);
             const browserLang = navigator.language.startsWith('da') ? 'danish' : 
                                 navigator.language.startsWith('kl') ? 'greenlandic' : 'english';
@@ -206,7 +261,6 @@
             const initialLang = savedLang || browserLang || 'english';
             setLanguage(initialLang);
 
-            // Manual Selection
             langButtons.forEach(button => {
                 button.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -214,7 +268,6 @@
                 });
             });
 
-            // Scroll & Reveal Logic
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) entry.target.classList.add('active');
@@ -231,7 +284,6 @@
                 }
             });
 
-            // Mobile Menu Logic
             const openBtn = document.getElementById('mobile-menu-open');
             const closeBtn = document.getElementById('mobile-menu-close');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -239,7 +291,6 @@
             if(openBtn) openBtn.addEventListener('click', () => mobileMenu.classList.add('active'));
             if(closeBtn) closeBtn.addEventListener('click', () => mobileMenu.classList.remove('active'));
             
-            // Close menu when clicking a link (optional but recommended)
             const mobileLinks = document.querySelectorAll('.mobile-links a');
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => mobileMenu.classList.remove('active'));
