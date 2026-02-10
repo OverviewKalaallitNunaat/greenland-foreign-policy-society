@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights | NUNANUT</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="insights-page">
+
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-close" id="mobile-menu-close">&times;</button>
+        <div class="mobile-links">
+            <a href="index.html" class="lang-content" data-lang="english">Home</a>
+            <a href="index.html" class="lang-content" data-lang="greenlandic">Angerlarsimaffik</a>
+            <a href="index.html" class="lang-content" data-lang="danish">Hjem</a>
+            
+            <a href="insights.html" class="lang-content" data-lang="english">Insights</a>
+            <a href="insights.html" class="lang-content" data-lang="greenlandic">Isummat</a>
+            <a href="insights.html" class="lang-content" data-lang="danish">Indblik</a>
+        </div>
+    </div>
+
+    <nav class="site-nav scrolled" id="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-text">NUNANUT</a>
+            </div>
+            
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html#mission" class="lang-content" data-lang="english">Mission</a>
+                    <a href="index.html#mission" class="lang-content" data-lang="greenlandic">Anguniakkavut</a>
+                    <a href="index.html#mission" class="lang-content" data-lang="danish">Mission</a>
+                </li>
+                <li>
+                    <a href="insights.html" class="lang-content" data-lang="english">Insights</a>
+                    <a href="insights.html" class="lang-content" data-lang="greenlandic">Isummat</a>
+                    <a href="insights.html" class="lang-content" data-lang="danish">Indblik</a>
+                </li>
+            </ul>
+
+            <div class="nav-right">
+                <div class="language-selector">
+                    <button class="lang-button" data-lang="greenlandic">KL</button>
+                    <button class="lang-button" data-lang="danish">DA</button>
+                    <button class="lang-button" data-lang="english">EN</button>
+                </div>
+                <button class="mobile-toggle" id="mobile-menu-open"><i class="fa-solid fa-bars-staggered"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="lang-content" data-lang="english">Insights</h1>
+            <h1 class="lang-content" data-lang="greenlandic">Isummat</h1>
+            <h1 class="lang-content" data-lang="danish">Indblik</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle lang-content" data-lang="english">Strategic Analysis & Expert Commentary</p>
+            <p class="hero-subtitle lang-content" data-lang="greenlandic">Misissueqqissaarnerit oqaaseqaatillu</p>
+            <p class="hero-subtitle lang-content" data-lang="danish">Strategisk analyse og ekspertkommentarer</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">
+                <span class="lang-content" data-lang="english">All</span>
+                <span class="lang-content" data-lang="greenlandic">Tamarmik</span>
+                <span class="lang-content" data-lang="danish">Alle</span>
+            </button>
+            <button class="filter-btn" data-filter="analysis">
+                <span class="lang-content" data-lang="english">Analysis</span>
+                <span class="lang-content" data-lang="greenlandic">Misissueqqissaarneq</span>
+                <span class="lang-content" data-lang="danish">Analyse</span>
+            </button>
+            <button class="filter-btn" data-filter="commentary">
+                <span class="lang-content" data-lang="english">Commentary</span>
+                <span class="lang-content" data-lang="greenlandic">Oqaaseqaatit</span>
+                <span class="lang-content" data-lang="danish">Kommentarer</span>
+            </button>
+            <button class="filter-btn" data-filter="briefing">
+                <span class="lang-content" data-lang="english">Briefing</span>
+                <span class="lang-content" data-lang="greenlandic">Paasissutissat</span>
+                <span class="lang-content" data-lang="danish">Briefing</span>
+            </button>
+            <button class="filter-btn" data-filter="observation">
+                <span class="lang-content" data-lang="english">Observation</span>
+                <span class="lang-content" data-lang="greenlandic">Nalunaarsukkat</span>
+                <span class="lang-content" data-lang="danish">Observation</span>
+            </button>
+        </div>
+
+        <div class="insights-feed">
+            <a href="articles/arctic-trade/index.html" class="insight-item-link" data-category="analysis">
+                <article class="insight-card">
+                    <div class="insight-thumbnail">
+                        <img src="articles/arctic-trade/thumb.jpg" alt="Arctic Trade">
+                    </div>
+                    <div class="insight-info">
+                        <div class="card-meta-top">
+                            <span class="lang-content" data-lang="english">Analysis</span>
+                            <span class="lang-content" data-lang="greenlandic">Misissueqqissaarneq</span>
+                            <span class="lang-content" data-lang="danish">Analyse</span>
+                        </div>
+                        <h2 class="lang-content" data-lang="english">The Future of Arctic Trade Routes</h2>
+                        <h2 class="lang-content" data-lang="greenlandic">Issittumi niuernermi aqqutissat siunissaat</h2>
+                        <h2 class="lang-content" data-lang="danish">Fremtiden for arktiske handelsruter</h2>
+                        <p class="excerpt lang-content" data-lang="english">Examining how the receding ice is transforming the geopolitics of the High North.</p>
+                        <div class="insight-footer">
+                            <span class="date">16 May 2026</span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 NUNANUT | Greenland Foreign Policy Society</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-button');
+            const langContents = document.querySelectorAll('.lang-content');
+            
+            // KEY MUST BE IDENTICAL ON EVERY PAGE
+            const STORAGE_KEY = 'nunanut_global_lang'; 
+
+            function setLanguage(lang) {
+                localStorage.setItem(STORAGE_KEY, lang);
+                
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+
+                langContents.forEach(content => {
+                    content.classList.toggle('active', content.dataset.lang === lang);
+                });
+
+                // Update accessibility tag
+                const htmlLang = lang === 'greenlandic' ? 'kl' : lang === 'danish' ? 'da' : 'en';
+                document.documentElement.lang = htmlLang;
+            }
+
+            // Persistence Initialization
+            const savedLang = localStorage.getItem(STORAGE_KEY);
+            const initialLang = savedLang || 'english';
+            setLanguage(initialLang);
+
+            // Manual Selection
+            langButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(button.dataset.lang);
+                });
+            });
+
+            // Filter Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.insight-item-link');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filterValue = btn.getAttribute('data-filter');
+                    items.forEach(item => {
+                        item.style.display = (filterValue === 'all' || item.dataset.category === filterValue) ? 'block' : 'none';
+                    });
+                });
+            });
+
+            // Mobile Menu
+            const openBtn = document.getElementById('mobile-menu-open');
+            const closeBtn = document.getElementById('mobile-menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if(openBtn) openBtn.addEventListener('click', () => mobileMenu.classList.add('active'));
+            if(closeBtn) closeBtn.addEventListener('click', () => mobileMenu.classList.remove('active'));
+        });
+    </script>
+</body>
+</html>
