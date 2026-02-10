@@ -15,19 +15,19 @@
 
     <div class="mobile-menu" id="mobile-menu">
         <button class="mobile-close" id="mobile-menu-close">&times;</button>
-<div class="mobile-links">
-    <a href="index.html" class="lang-content" data-lang="english">Home</a>
-    <a href="index.html" class="lang-content" data-lang="greenlandic">Saaq</a>
-    <a href="index.html" class="lang-content" data-lang="danish">Hjem</a>
-    
-    <a href="index.html#mission" class="lang-content" data-lang="english">Mission</a>
-    <a href="index.html#mission" class="lang-content" data-lang="greenlandic">Anguniakkavut</a>
-    <a href="index.html#mission" class="lang-content" data-lang="danish">Mission</a>
-    
-    <a href="insights.html" class="lang-content" data-lang="english">Insights</a>
-    <a href="insights.html" class="lang-content" data-lang="greenlandic">Paasisimasat</a>
-    <a href="insights.html" class="lang-content" data-lang="danish">Indblik</a>
-</div>
+        <div class="mobile-links">
+            <a href="index.html" class="lang-content" data-lang="english">Home</a>
+            <a href="index.html" class="lang-content" data-lang="greenlandic">Saaq</a>
+            <a href="index.html" class="lang-content" data-lang="danish">Hjem</a>
+            
+            <a href="index.html#mission" class="lang-content" data-lang="english">Mission</a>
+            <a href="index.html#mission" class="lang-content" data-lang="greenlandic">Anguniakkavut</a>
+            <a href="index.html#mission" class="lang-content" data-lang="danish">Mission</a>
+            
+            <a href="insights.html" class="lang-content" data-lang="english">Insights</a>
+            <a href="insights.html" class="lang-content" data-lang="greenlandic">Paasisimasat</a>
+            <a href="insights.html" class="lang-content" data-lang="danish">Indblik</a>
+        </div>
     </div>
 
     <nav class="site-nav scrolled" id="main-nav">
@@ -66,9 +66,9 @@
             <h1 class="lang-content" data-lang="greenlandic">Paasisimasat</h1>
             <h1 class="lang-content" data-lang="danish">Indblik</h1>
             <div class="hero-divider"></div>
-            <p class="hero-subtitle lang-content" data-lang="english">Strategic Analysis & Expert Commentary</p>
-            <p class="hero-subtitle lang-content" data-lang="greenlandic">Misissueqqissaarnerit oqaaseqaatillu</p>
-            <p class="hero-subtitle lang-content" data-lang="danish">Strategisk analyse og ekspertkommentarer</p>
+            <p class="hero-subtitle lang-content active" data-lang="english">Strategic Analysis, Expert Commentary & Observations</p>
+            <p class="hero-subtitle lang-content" data-lang="greenlandic">Misissueqqissaarnerit, oqaaseqaatit maluginiakkallu</p>
+            <p class="hero-subtitle lang-content" data-lang="danish">Strategisk analyse, ekspertkommentarer og observationer</p>
         </div>
     </header>
 
@@ -102,21 +102,36 @@
         </div>
 
         <div class="insights-feed">
-            <a href="articles/arctic-trade/index.html" class="insight-item-link" data-category="analysis">
+	<span style="display:none;">🆕</span>
+        <a href="articles/2026-06-17/article.html" class="insight-item-link" data-category="commentary">
+            <article class="insight-card">
+                <div class="insight-thumbnail">
+                    <img src="articles/2026-06-17/small.jpg" alt="Thumbnail" style="width:100%; border-radius: 8px; margin-bottom: 1.5rem;">
+                </div>
+                <div class="insight-info">
+                    <div class="card-meta-top">
+                        <span class="lang-content active" data-lang="english">Commentary</span>
+                    </div>
+                    <h2 class="lang-content active" data-lang="english">Diplomatic Horizons: Greenland’s New Voice</h2>
+                    <p class="excerpt lang-content active" data-lang="english">As international interest in the Arctic reaches unprecedented levels, Greenland is moving beyond passive geography toward active diplomacy....</p>
+                    <div class="insight-footer">
+                        <span class="date">20 May 2026</span>
+                    </div>
+                </div>
+            </article>
+        </a>
+
+            <a href="articles/2026-05-16_arctic_trade/article.html" class="insight-item-link" data-category="analysis">
                 <article class="insight-card">
                     <div class="insight-thumbnail">
-                        <img src="articles/arctic-trade/thumb.jpg" alt="Arctic Trade">
+                        <img src="articles/2026-05-16_arctic_trade/arctic-view_smal.jpg" alt="Arctic Trade Preview" style="width:100%; border-radius: 8px; margin-bottom: 1.5rem;">
                     </div>
                     <div class="insight-info">
                         <div class="card-meta-top">
-                            <span class="lang-content" data-lang="english">Analysis</span>
-                            <span class="lang-content" data-lang="greenlandic">Misissueqqissaarneq</span>
-                            <span class="lang-content" data-lang="danish">Analyse</span>
+                            <span class="lang-content active" data-lang="english">Analysis</span>
                         </div>
-                        <h2 class="lang-content" data-lang="english">The Future of Arctic Trade Routes</h2>
-                        <h2 class="lang-content" data-lang="greenlandic">Issittumi niuernermi aqqutissat siunissaat</h2>
-                        <h2 class="lang-content" data-lang="danish">Fremtiden for arktiske handelsruter</h2>
-                        <p class="excerpt lang-content" data-lang="english">Examining how the receding ice is transforming the geopolitics of the High North.</p>
+                        <h2 class="lang-content active" data-lang="english">The Future of Arctic Trade Routes</h2>
+                        <p class="excerpt lang-content active" data-lang="english">Examining how the receding ice is transforming the geopolitics of the High North.</p>
                         <div class="insight-footer">
                             <span class="date">16 May 2026</span>
                         </div>
@@ -128,7 +143,47 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 NUNANUT | Greenland Foreign Policy Society</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-text">NUNANUT</span>
+                    <div class="footer-contact-info">
+                        <p>3900 Nuuk, Greenland</p>
+                        <p>udenrigspolitiskforening@outlook.com</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/NunanutAllanutPolitikkeqarnermutPeqatigiiffik" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://gl.linkedin.com/company/den-udenrigspolitiske-forening-i-groenland" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-support">
+                    <h5 class="lang-content" data-lang="english">Support Our Work</h5>
+                    <h5 class="lang-content" data-lang="greenlandic">Tapersiiffit</h5>
+                    <h5 class="lang-content" data-lang="danish">Støt os</h5>
+                    
+                    <div class="support-details">
+                        <p class="lang-content" data-lang="english">
+                            Do you think our mission deserves your support? <br>
+                            Bank Transfer: <strong>Reg: 6471, Acc: 5906366</strong> <br>
+                            Label your transfer: <strong>"Support"</strong>
+                        </p>
+                        <p class="lang-content" data-lang="greenlandic">
+                            Suliagut tapersersugassatut isigaigit? <br>
+                            Aningaasat nuunneqarsinnaapput: <strong>Reg: 6471, Acc: 5906366</strong> <br>
+                            Nalunaaqutsiuk: <strong>"Support"</strong>
+                        </p>
+                        <p class="lang-content" data-lang="danish">
+                            Mener du vores mission fortjener din støtte? <br>
+                            Bankoverførsel: <strong>Reg: 6471, Acc: 5906366</strong> <br>
+                            Mærk overførslen: <strong>"Support"</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Greenland Foreign Policy Society | <a href="about.html">Articles of Association</a></p>
+            </div>
         </div>
     </footer>
 
@@ -137,7 +192,6 @@
             const langButtons = document.querySelectorAll('.lang-button');
             const langContents = document.querySelectorAll('.lang-content');
             
-            // KEY MUST BE IDENTICAL ON EVERY PAGE
             const STORAGE_KEY = 'nunanut_global_lang'; 
 
             function setLanguage(lang) {
@@ -151,17 +205,14 @@
                     content.classList.toggle('active', content.dataset.lang === lang);
                 });
 
-                // Update accessibility tag
                 const htmlLang = lang === 'greenlandic' ? 'kl' : lang === 'danish' ? 'da' : 'en';
                 document.documentElement.lang = htmlLang;
             }
 
-            // Persistence Initialization
             const savedLang = localStorage.getItem(STORAGE_KEY);
             const initialLang = savedLang || 'english';
             setLanguage(initialLang);
 
-            // Manual Selection
             langButtons.forEach(button => {
                 button.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -169,7 +220,6 @@
                 });
             });
 
-            // Filter Logic
             const filterBtns = document.querySelectorAll('.filter-btn');
             const items = document.querySelectorAll('.insight-item-link');
             filterBtns.forEach(btn => {
@@ -183,7 +233,6 @@
                 });
             });
 
-            // Mobile Menu
             const openBtn = document.getElementById('mobile-menu-open');
             const closeBtn = document.getElementById('mobile-menu-close');
             const mobileMenu = document.getElementById('mobile-menu');
