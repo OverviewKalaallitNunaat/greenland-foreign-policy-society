@@ -24,7 +24,6 @@ body {
 h1, h2, h3, h4, .logo-text { font-family: 'Playfair Display', serif; font-weight: 700; }
 
 /* --- 2. THE LANGUAGE FIX --- */
-/* Forces elements to follow the active/inactive state */
 .lang-content { 
     display: none !important; 
 }
@@ -33,7 +32,6 @@ h1, h2, h3, h4, .logo-text { font-family: 'Playfair Display', serif; font-weight
     display: block !important; 
 }
 
-/* Fix for inline translatable elements like spans or links */
 span.lang-content.active, 
 a.lang-content.active { 
     display: inline-block !important; 
@@ -157,7 +155,47 @@ a.lang-content.active {
     text-align: center; 
 }
 
-/* --- 8. INSIGHTS FILTERS --- */
+/* --- 8. TICKER (LIVING LIST) --- */
+.living-list-container {
+    background: var(--slate-light);
+    padding: 2rem 0;
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.ticker-wrapper {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+}
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 40px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+.ticker-item i { margin-right: 10px; color: var(--greenland-red); }
+.ticker-date { font-weight: 700; margin-right: 10px; color: var(--arctic-navy); }
+
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- 9. SECTIONS & PILLARS --- */
+.section-mission { padding: 10rem 0; }
+.section-title { font-size: 2.2rem; margin-bottom: 3.5rem; color: var(--arctic-navy); }
+
+.pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 6rem; }
+.pillar { padding: 4rem 2.5rem; background: var(--slate-light); border-radius: 1rem; text-align: center; transition: var(--transition); border: 1px solid transparent; }
+.pillar i { font-size: 2.2rem; color: var(--greenland-red); margin-bottom: 1.5rem; }
+
+.pillar-link { text-decoration: none; color: inherit; display: block; }
+.pillar-link:hover .pillar { border-color: var(--greenland-red); transform: translateY(-5px); }
+
+/* --- 10. ARTICLE & INSIGHTS --- */
 .filter-container {
     display: flex; justify-content: center; gap: 1.2rem;
     margin-top: -3.5rem; margin-bottom: 5rem;
@@ -175,7 +213,6 @@ a.lang-content.active {
 .filter-btn:hover { transform: translateY(-5px); border-color: var(--greenland-red); }
 .filter-btn.active { background: var(--arctic-navy); color: white; border-color: var(--arctic-navy); }
 
-/* --- 9. INSIGHTS FEED & CARDS --- */
 .insights-feed {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -202,27 +239,14 @@ a.lang-content.active {
 .insight-footer { margin-top: auto; border-top: 1px solid #f1f5f9; padding-top: 1.5rem; }
 .date { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); }
 
-/* --- 10. ARTICLE CONTENT PAGE --- */
-.article-container { max-width: 850px; margin: 150px auto 100px; padding: 0 25px; }
-.article-header { margin-bottom: 4rem; text-align: center; }
-.article-header .meta { margin-bottom: 1rem; color: var(--text-muted); font-weight: 600; }
-.article-header h1 { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 2rem; }
-.article-body { font-size: 1.15rem; color: var(--text-main); line-height: 1.9; }
-.article-body p { margin-bottom: 2rem; }
-
-/* --- 11. SECTIONS --- */
-.section-mission { padding: 10rem 0; }
-.section-title { font-size: 2.2rem; margin-bottom: 3.5rem; color: var(--arctic-navy); }
-
-.pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 6rem; }
-.pillar { padding: 4rem 2.5rem; background: var(--slate-light); border-radius: 1rem; text-align: center; transition: var(--transition); }
-.pillar i { font-size: 2.2rem; color: var(--greenland-red); margin-bottom: 1.5rem; }
-
-/* --- 12. FOOTER --- */
+/* --- 11. FOOTER --- */
 .site-footer { padding: 8rem 0 4rem; background: white; border-top: 1px solid #f1f5f9; }
-.footer-grid { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem; }
+.footer-grid { display: flex; justify-content: space-between; gap: 3rem; flex-wrap: wrap; }
+.footer-brand { flex: 1; min-width: 250px; }
+.footer-support { flex: 2; min-width: 300px; }
+.footer-bottom { border-top: 1px solid #f1f5f9; margin-top: 4rem; padding-top: 2rem; }
 
-/* --- 13. MOBILE & TOGGLE FIXES --- */
+/* --- 12. MOBILE & NAVIGATION --- */
 .mobile-toggle { 
     display: none; 
     background: none; 
@@ -245,15 +269,11 @@ a.lang-content.active {
 
 .mobile-links { 
     display: flex;
-    flex-direction: column; /* This fixes the strange horizontal listing */
+    flex-direction: column;
     text-align: center; 
 }
 
-/* Force only the active language to show in the burger menu list */
-.mobile-links a.lang-content {
-    display: none !important;
-}
-
+.mobile-links a.lang-content { display: none !important; }
 .mobile-links a.lang-content.active { 
     display: block !important; 
     color: white; 
@@ -263,21 +283,9 @@ a.lang-content.active {
     font-family: 'Playfair Display'; 
 }
 
-/* Responsive adjustments */
 @media (max-width: 992px) {
     .nav-links { display: none; }
-    
-    .mobile-toggle { 
-        display: flex; 
-        order: 2; /* Keeps burger to the right of language buttons */
-    }
-    
-    .language-selector {
-        order: 1;
-    }
-
-    .page-header { padding: 10rem 0 6rem; }
-    .insights-feed { grid-template-columns: 1fr; }
-    .filter-container { margin-top: -2rem; gap: 0.8rem; }
-    .filter-btn { padding: 0.7rem 1.2rem; font-size: 0.75rem; }
+    .mobile-toggle { display: flex; order: 2; }
+    .language-selector { order: 1; }
+    .footer-grid { flex-direction: column; text-align: center; }
 }
