@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles of Association | NUNANUT</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .article-page { background-color: var(--slate-light); }
+
+        .page-header {
+            padding: 12rem 0 6rem;
+            background: var(--arctic-navy);
+            color: white;
+            text-align: center;
+        }
+
+        .article-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
+            margin-top: -4rem; 
+            padding-bottom: 8rem;
+        }
+
+        .article-sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            z-index: 10;
+        }
+
+        .sidebar-nav { list-style: none; padding: 0; }
+        .sidebar-nav li { margin-bottom: 0.8rem; }
+        .sidebar-nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+            display: block;
+            padding: 5px 0;
+        }
+        .sidebar-nav a:hover { color: var(--greenland-red); transform: translateX(5px); }
+
+        .article-content {
+            background: white;
+            padding: 5rem;
+            border-radius: 1rem;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+            line-height: 1.8;
+        }
+
+        .article-section { margin-bottom: 4rem; scroll-margin-top: 140px; }
+        .article-section h3 {
+            font-size: 1.8rem;
+            color: var(--arctic-navy);
+            border-bottom: 2px solid var(--slate-light);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .article-section h3::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: var(--greenland-red);
+            border-radius: 50%;
+        }
+
+        .clause-item { display: flex; gap: 15px; margin-bottom: 1rem; font-size: 0.95rem; }
+        .clause-number { font-weight: 700; color: var(--greenland-red); min-width: 35px; }
+
+        @media (max-width: 992px) {
+            .article-layout { grid-template-columns: 1fr; }
+            .article-sidebar { display: none; }
+            .article-content { padding: 2.5rem; }
+        }
+    </style>
+</head>
+<body class="article-page">
+
+    <nav class="site-nav scrolled" id="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand"><a href="index.html" class="logo-text">NUNANUT</a></div>
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html#mission" class="lang-content" data-lang="english">Mission</a>
+                    <a href="index.html#mission" class="lang-content" data-lang="greenlandic">Anguniakkavut</a>
+                    <a href="index.html#mission" class="lang-content" data-lang="danish">Mission</a>
+                </li>
+                <li>
+                    <a href="insights.html" class="lang-content" data-lang="english">Insights</a>
+                    <a href="insights.html" class="lang-content" data-lang="greenlandic">Paasisimasat</a>
+                    <a href="insights.html" class="lang-content" data-lang="danish">Indblik</a>
+                </li>
+            </ul>
+            <div class="nav-right">
+                <div class="language-selector">
+                    <button class="lang-button" data-lang="greenlandic">KL</button>
+                    <button class="lang-button" data-lang="danish">DA</button>
+                    <button class="lang-button" data-lang="english">EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="lang-content" data-lang="english">Articles of Association</h1>
+            <h1 class="lang-content" data-lang="greenlandic">Peqatigiiffiup malittarisassai</h1>
+            <h1 class="lang-content" data-lang="danish">Vedtægter</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle">Nunanut Allanut Politikkeqarnermut Peqatigiiffik</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="article-layout">
+            <aside class="article-sidebar">
+                <h5 style="margin-bottom: 1.5rem; letter-spacing: 1px; text-transform: uppercase; font-size: 0.75rem; color: var(--greenland-red);">Index</h5>
+                <ul class="sidebar-nav">
+                    <li><a href="#purpose">1. Purpose</a></li>
+                    <li><a href="#residence">2. Residence</a></li>
+                    <li><a href="#members">3. Members</a></li>
+                    <li><a href="#admission">4. Admission</a></li>
+                    <li><a href="#fees">5. Fees</a></li>
+                    <li><a href="#meeting">6. General Meeting</a></li>
+                    <li><a href="#board">7. Board</a></li>
+                    <li><a href="#economy">8. Economy</a></li>
+                    <li><a href="#liability">9. Liability</a></li>
+                    <li><a href="#amendments">10. Amendments</a></li>
+                    <li><a href="#termination">11. Termination</a></li>
+                </ul>
+            </aside>
+
+            <div class="article-content">
+                <section id="purpose" class="article-section">
+                    <h3>1. Purpose</h3>
+                    <p>Nunanut Allanut Politikkeqarnermut Peqatigiiffik (Nunanut), internationally known as the <strong>Greenland Foreign Policy Society</strong>, is a voluntary association with the aim of promoting knowledge of and increasing interest in foreign policy issues in Greenland.</p>
+                    <p>The association is independent of public, political, commercial, and organizational interests. It does not take positions on political issues but serves exclusively as a platform for information, debate, and networking.</p>
+                </section>
+
+                <section id="residence" class="article-section">
+                    <h3>2. Place of Residence</h3>
+                    <div class="clause-item"><span class="clause-number">2.1</span> <p>The association is based in Greenland, specifically within the Sermersooq municipality.</p></div>
+                    <div class="clause-item"><span class="clause-number">2.2</span> <p>Activities primarily occur in Nuuk, the capital city of Sermersooq.</p></div>
+                    <div class="clause-item"><span class="clause-number">2.3</span> <p>Events may also take place outside municipal boundaries due to international collaboration.</p></div>
+                </section>
+
+                <section id="members" class="article-section">
+                    <h3>3. Members</h3>
+                    <div class="clause-item"><span class="clause-number">3.1</span> <p>Membership is open to all interested parties.</p></div>
+                    <div class="clause-item"><span class="clause-number">3.2</span> <p>Residency within the geographical seat is not required for membership.</p></div>
+                    <div class="clause-item"><span class="clause-number">3.3</span> <p>Termination of membership must be submitted in writing to the board and takes effect at the end of September.</p></div>
+                </section>
+
+                <section id="admission" class="article-section">
+                    <h3>4. Admission</h3>
+                    <div class="clause-item"><span class="clause-number">4.1</span> <p>The board may refuse membership applications at its discretion.</p></div>
+                </section>
+
+                <section id="fees" class="article-section">
+                    <h3>5. Membership Fee</h3>
+                    <div class="clause-item"><span class="clause-number">5.1</span> <p>Members pay an annual fee of DKK 50, collected in September.</p></div>
+                    <div class="clause-item"><span class="clause-number">5.6</span> <p>Members enrolled in educational institutions are exempt from the fee.</p></div>
+                    <div class="clause-item"><span class="clause-number">5.7</span> <p>Payment details: Bank of Greenland, Reg: 6471, Acc: 5906366.</p></div>
+                </section>
+
+                <section id="meeting" class="article-section">
+                    <h3>6. General Meeting</h3>
+                    <div class="clause-item"><span class="clause-number">6.1</span> <p>The general meeting is the supreme authority of the association.</p></div>
+                    <div class="clause-item"><span class="clause-number">6.3</span> <p>The board provides notice of the general meeting 14 days in advance via digital communication.</p></div>
+                    <div class="clause-item"><span class="clause-number">6.4</span> <p>Only members with at least 6 months of membership are eligible to vote.</p></div>
+                    <div class="clause-item"><span class="clause-number">6.5</span> <p>Members with outstanding dues are not eligible to vote.</p></div>
+                </section>
+
+                <section id="board" class="article-section">
+                    <h3>7. Board of Directors</h3>
+                    <div class="clause-item"><span class="clause-number">7.1</span> <p>The board consists of the chairman, vice-chairman, and treasurer, elected for a one-year term.</p></div>
+                    <div class="clause-item"><span class="clause-number">7.2</span> <p>Founding members of the board are permanent, subject to exclusion only under circumstances of negligence.</p></div>
+                    <div class="clause-item"><span class="clause-number">7.3</span> <p>Founding members may resign upon notification to the board chairman or vice-chairman.</p></div>
+                </section>
+
+                <section id="economy" class="article-section">
+                    <h3>8. Economy</h3>
+                    <div class="clause-item"><span class="clause-number">8.1</span> <p>The financial year follows the calendar year.</p></div>
+                    <div class="clause-item"><span class="clause-number">8.2</span> <p>All financial transactions require approval from both the chairman and the treasurer.</p></div>
+                </section>
+
+                <section id="liability" class="article-section">
+                    <h3>9. Liability</h3>
+                    <div class="clause-item"><span class="clause-number">9.1</span> <p>The association is liable only with its assets and does not impose personal liability on board members.</p></div>
+                </section>
+
+                <section id="amendments" class="article-section">
+                    <h3>10. Amendments</h3>
+                    <div class="clause-item"><span class="clause-number">10.1</span> <p>The board may amend the articles during the first year following the association's establishment.</p></div>
+                </section>
+
+                <section id="termination" class="article-section">
+                    <h3>11. Termination</h3>
+                    <div class="clause-item"><span class="clause-number">11.1</span> <p>Proposals for dissolution must be initiated by the board and require a 2/3 majority at the general meeting.</p></div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-button');
+            const langContents = document.querySelectorAll('.lang-content');
+            const STORAGE_KEY = 'nunanut_global_lang'; 
+
+            function setLanguage(lang) {
+                localStorage.setItem(STORAGE_KEY, lang);
+                langButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+                langContents.forEach(content => content.classList.toggle('active', content.dataset.lang === lang));
+            }
+
+            const initialLang = localStorage.getItem(STORAGE_KEY) || 'english';
+            setLanguage(initialLang);
+
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => setLanguage(button.dataset.lang));
+            });
+        });
+    </script>
+</body>
+</html>
