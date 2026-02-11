@@ -540,3 +540,135 @@ a.lang-content.active {
     .insight-card-horizontal { flex-direction: column; align-items: flex-start; }
     .insight-card-image { width: 100%; height: 150px; }
 }
+/* --- Development Banner --- */
+:root {
+    --banner-height: 48px;
+}
+
+.dev-banner {
+    background: var(--arctic-navy);
+    color: white;
+    height: var(--banner-height);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+/* Logic for dismissing the banner */
+.dev-banner.banner-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.dev-banner-content {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dev-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Pulsing "Live" Indicator */
+.pulse-icon {
+    width: 8px;
+    height: 8px;
+    background-color: var(--greenland-red);
+    border-radius: 50%;
+    position: relative;
+}
+
+.pulse-icon::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--greenland-red);
+    border-radius: 50%;
+    animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(3.5); opacity: 0; }
+}
+
+.dev-left .lang-content {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.dev-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Progress Bar from test.html inspiration */
+.dev-progress-container {
+    width: 120px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.dev-progress-fill {
+    width: 45%; /* Change this to update site progress */
+    height: 100%;
+    background: var(--greenland-red);
+    box-shadow: 0 0 10px var(--greenland-red);
+}
+
+/* Close Button */
+.dev-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    padding: 5px;
+}
+
+.dev-close:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* --- Navigation Adjustment --- */
+/* This ensures your nav doesn't hide behind the banner */
+.site-nav {
+    top: var(--banner-height);
+    transition: top 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Move nav up when banner is hidden */
+.dev-banner.banner-hidden ~ .site-nav {
+    top: 0;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    :root { --banner-height: 40px; }
+    .dev-progress-container { display: none; } /* Hide progress on tiny screens to save space */
+    .dev-banner-content { padding: 0 20px; }
+    .dev-left .lang-content { font-size: 0.6rem; letter-spacing: 1px; }
+}

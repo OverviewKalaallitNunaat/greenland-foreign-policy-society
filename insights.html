@@ -13,6 +13,23 @@
 </head>
 <body class="insights-page">
 
+    <div class="dev-banner" id="dev-status-banner">
+        <div class="dev-banner-content">
+            <div class="dev-left">
+                <span class="pulse-icon"></span>
+                <span class="lang-content" data-lang="english">Site Under Development (this is a demo)</span>
+                <span class="lang-content" data-lang="greenlandic">Nittartagaq suli naammassinngilaq (massakkut demo-naavoq)</span>
+                <span class="lang-content" data-lang="danish">Siden er under udvikling (dette er blot en demo)</span>
+            </div>
+            <div class="dev-right">
+                <div class="dev-progress-container">
+                    <div class="dev-progress-fill"></div>
+                </div>
+                <button class="dev-close" id="close-banner" title="Close (Esc)">&times;</button>
+            </div>
+        </div>
+    </div>
+
     <div class="mobile-menu" id="mobile-menu">
         <button class="mobile-close" id="mobile-menu-close">&times;</button>
         <div class="mobile-links">
@@ -102,7 +119,7 @@
         </div>
 
         <div class="insights-feed">
-	<span style="display:none;">🆕</span>
+	    <span style="display:none;">🆕</span>
         <a href="articles/2026-06-17/article.html" class="insight-item-link" data-category="commentary">
             <article class="insight-card">
                 <div class="insight-thumbnail">
@@ -218,6 +235,23 @@
                     e.preventDefault();
                     setLanguage(button.dataset.lang);
                 });
+            });
+
+            // --- Banner Logic ---
+            const devBanner = document.getElementById('dev-status-banner');
+            const closeBannerBtn = document.getElementById('close-banner');
+
+            function dismissBanner() {
+                if (devBanner) {
+                    devBanner.classList.add('banner-hidden');
+                    setTimeout(() => devBanner.style.display = 'none', 500);
+                }
+            }
+
+            if (closeBannerBtn) closeBannerBtn.addEventListener('click', dismissBanner);
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') dismissBanner();
             });
 
             const filterBtns = document.querySelectorAll('.filter-btn');

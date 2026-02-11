@@ -16,6 +16,23 @@
 </head>
 <body class="home-page">
 
+    <div class="dev-banner" id="dev-status-banner">
+        <div class="dev-banner-content">
+            <div class="dev-left">
+                <span class="pulse-icon"></span>
+                <span class="lang-content" data-lang="english">Site Under Development (this is a demo)</span>
+                <span class="lang-content" data-lang="greenlandic">Nittartagaq suli naammassinngilaq (massakkut demo-naavoq)</span>
+                <span class="lang-content" data-lang="danish">Siden er under udvikling (dette er blot en demo)</span>
+            </div>
+            <div class="dev-right">
+                <div class="dev-progress-container">
+                    <div class="dev-progress-fill"></div>
+                </div>
+                <button class="dev-close" id="close-banner" title="Close (Esc)">&times;</button>
+            </div>
+        </div>
+    </div>
+
     <div class="mobile-menu" id="mobile-menu">
         <button class="mobile-close" id="mobile-menu-close">&times;</button>
         <div class="mobile-links">
@@ -124,29 +141,31 @@
                 <div class="pillars-grid reveal">
                     <div class="pillar">
                         <i class="fa-solid fa-pen-nib"></i>
-<h4 class="lang-content" data-lang="english">Perspectives</h4>
-        <h4 class="lang-content" data-lang="greenlandic">Isiginnittaatsut</h4>
-        <h4 class="lang-content" data-lang="danish">Perspektiver</h4>
-        <p class="lang-content" data-lang="english">Facilitating active engagement between the public, experts, and defense professionals.</p>
-        <p class="lang-content" data-lang="greenlandic">Inuiaqatigiit, ilisimasallit illersornissaqarfimmilu suliallit akornanni peqataatitsineq sulissutigaarput.</p>
-        <p class="lang-content" data-lang="danish">Vi faciliterer aktivt engagement mellem offentligheden, eksperter og fagfolk i forsvaret.</p>                    </div>
+                        <h4 class="lang-content" data-lang="english">Perspectives</h4>
+                        <h4 class="lang-content" data-lang="greenlandic">Isiginnittaatsut</h4>
+                        <h4 class="lang-content" data-lang="danish">Perspektiver</h4>
+                        <p class="lang-content" data-lang="english">Facilitating active engagement between the public, experts, and defense professionals.</p>
+                        <p class="lang-content" data-lang="greenlandic">Inuiaqatigiit, ilisimasallit illersornissaqarfimmilu suliallit akornanni peqataatitsineq sulissutigaarput.</p>
+                        <p class="lang-content" data-lang="danish">Vi faciliterer aktivt engagement mellem offentligheden, eksperter og fagfolk i forsvaret.</p>
+                    </div>
                     <div class="pillar">
                         <i class="fa-solid fa-comment-dots"></i> 
                         <h4 class="lang-content" data-lang="english">Discussion</h4>
                         <h4 class="lang-content" data-lang="greenlandic">Oqaloqatigiinneq</h4>
                         <h4 class="lang-content" data-lang="danish">Debat</h4>
-			<p class="lang-content" data-lang="english">Working for Greenlandic perspectives and presence in international discussions and global fora.</p>
-        		<p class="lang-content" data-lang="greenlandic">Nunat tamalaat oqallinnerini Kalaallit Nunaata isiginnittaasai peqataanissaalu sulissutigaavut.</p>
-        		<p class="lang-content" data-lang="danish">Vi arbejder for grønlandske perspektiver og tilstedeværelse i internationale drøftelser og fora.</p>                    </div>
+			            <p class="lang-content" data-lang="english">Working for Greenlandic perspectives and presence in international discussions and global fora.</p>
+        		        <p class="lang-content" data-lang="greenlandic">Nunat tamalaat oqallinnerini Kalaallit Nunaata isiginnittaasai peqataanissaalu sulissutigaavut.</p>
+        		        <p class="lang-content" data-lang="danish">Vi arbejder for grønlandske perspektiver og tilstedeværelse i internationale drøftelser og fora.</p>                    
+                    </div>
                     <div class="pillar">
                         <i class="fa-solid fa-building-columns"></i>
                         <h4 class="lang-content" data-lang="english">Events</h4>
                         <h4 class="lang-content" data-lang="greenlandic">Pisartut</h4>
                         <h4 class="lang-content" data-lang="danish">Events</h4>
-<p class="lang-content" data-lang="english">Organizing public events and discussions in cooperation with foreign policy and security actors.</p>
-        <p class="lang-content" data-lang="greenlandic">Nunanut allanut isumannaallisaanermullu suliallit peqatigalugit tamanut ammasumik pisartunik oqallinnernillu aaqqissuussisarpugut.</p>
-        <p class="lang-content" data-lang="danish">Arrangerer offentlige events og debatter i samarbejde med udenrigs- og sikkerhedspolitiske aktører.</p>                    </div>
-                    </a>
+                        <p class="lang-content" data-lang="english">Organizing public events and discussions in cooperation with foreign policy and security actors.</p>
+                        <p class="lang-content" data-lang="greenlandic">Nunanut allanut isumannaallisaanermullu suliallit peqatigalugit tamanut ammasumik pisartunik oqallinnernillu aaqqissuussisarpugut.</p>
+                        <p class="lang-content" data-lang="danish">Arrangerer offentlige events og debatter i samarbejde med udenrigs- og sikkerhedspolitiske aktører.</p>                    
+                    </div>
                 </div>
             </div>
         </section>
@@ -246,6 +265,27 @@
                 });
             });
 
+            // --- Banner Close Logic ---
+            const devBanner = document.getElementById('dev-status-banner');
+            const closeBtn = document.getElementById('close-banner');
+
+            function dismissBanner() {
+                if (devBanner) {
+                    devBanner.classList.add('banner-hidden');
+                    // Completely remove after animation
+                    setTimeout(() => devBanner.style.display = 'none', 500);
+                }
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', dismissBanner);
+            }
+
+            // ESC Key listener
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') dismissBanner();
+            });
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) entry.target.classList.add('active');
@@ -263,14 +303,12 @@
             });
 
             const openBtn = document.getElementById('mobile-menu-open');
-            const closeBtn = document.getElementById('mobile-menu-close');
+            const mobileCloseBtn = document.getElementById('mobile-menu-close');
             const mobileMenu = document.getElementById('mobile-menu');
             
             if(openBtn) openBtn.addEventListener('click', () => mobileMenu.classList.add('active'));
-            if(closeBtn) closeBtn.addEventListener('click', () => mobileMenu.classList.remove('active'));
+            if(mobileCloseBtn) mobileCloseBtn.addEventListener('click', () => mobileMenu.classList.remove('active'));
         });
     </script>
 </body>
-
 </html>
-
