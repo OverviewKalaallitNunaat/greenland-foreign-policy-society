@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <div class="dev-banner" id="dev-status-banner">
+        <div class="dev-banner-content">
+            <div class="dev-left">
+                <span class="pulse-icon"></span>
+                <span class="lang-content" data-lang="english">Site Under Development (this is a demo)</span>
+                <span class="lang-content" data-lang="greenlandic">Nittartagaq suli naammassinngilaq (massakkut demo-naavoq)</span>
+                <span class="lang-content" data-lang="danish">Siden er under udvikling (dette er blot en demo)</span>
+            </div>
+            <div class="dev-right">
+                <div class="dev-progress-container">
+                    <div class="dev-progress-fill"></div>
+                </div>
+                <button class="dev-close" id="close-banner" title="Close (Esc)">&times;</button>
+            </div>
+        </div>
+    </div>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The 2026 Update: Greenland’s Maritime & Aviation Readiness | NUNANUT</title>
@@ -13,6 +30,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
+        /* --- LANGUAGE TOGGLE STYLES --- */
+        .lang-content {
+            display: none; /* Hidden by default */
+        }
+        .lang-content.active {
+            display: inline; /* Visible when active */
+        }
+        /* Block level override for paragraphs/divs */
+        div.lang-content.active, p.lang-content.active {
+            display: block;
+        }
+
         /* --- INTERACTIVE MAP STYLES --- */
         .map-section {
             margin: 4rem 0;
@@ -145,8 +174,20 @@
         <div class="nav-container">
             <div class="nav-brand"><a href="../../index.html" class="logo-text">NUNANUT</a></div>
             <ul class="nav-links">
-                <li><a href="../../index.html#mission" class="lang-content active" data-lang="english">Mission</a></li>
-                <li><a href="../../insights.html" class="lang-content active" data-lang="english">Insights</a></li>
+                <li>
+                    <a href="../../index.html#mission">
+                        <span class="lang-content active" data-lang="english">Mission</span>
+                        <span class="lang-content" data-lang="danish">Mission</span>
+                        <span class="lang-content" data-lang="greenlandic">Anguniagassat</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../insights.html">
+                        <span class="lang-content active" data-lang="english">Insights</span>
+                        <span class="lang-content" data-lang="danish">Indsigt</span>
+                        <span class="lang-content" data-lang="greenlandic">Paasissutissat</span>
+                    </a>
+                </li>
             </ul>
             <div class="nav-right">
                 <div class="language-selector">
@@ -154,7 +195,7 @@
                     <button class="lang-button" data-lang="danish">DA</button>
                     <button class="lang-button active" data-lang="english">EN</button>
                 </div>
-                <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+                <button class="mobile-toggle" id="mobile-menu-open"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </nav>
@@ -164,12 +205,24 @@
         <div class="hero-overlay"></div>
         
         <div class="hero-text-content entrance-animation">
-<br>
-            <span class="article-tag">Briefing: 2026 New Year Update</span>
-            <h1>Greenland’s Readiness for New Shipping and Travel</h1>
+            <br>
+            <span class="article-tag">
+                <span class="lang-content active" data-lang="english">Briefing: 2026 New Year Update</span>
+                <span class="lang-content" data-lang="danish">Briefing: Nytårsopdatering 2026</span>
+                <span class="lang-content" data-lang="greenlandic">Ilisimatitsissut: 2026 Ukiortaami Nutarterineq</span>
+            </span>
+            
+            <h1>
+                <span class="lang-content active" data-lang="english">Greenland’s Readiness for New Shipping and Travel</span>
+                <span class="lang-content" data-lang="danish">Grønlands Beredskab for Ny Skibsfart og Rejser</span>
+                <span class="lang-content" data-lang="greenlandic">Kalaallit Nunaata Umiarsuarnut Timmisartunullu Piareersimanera</span>
+            </h1>
+            
             <div class="hero-divider"></div>
             <div class="article-meta-info">
-                By <strong>Malik Peter Koch Hansen</strong> &bull; 31 January 2026
+                <span class="lang-content active" data-lang="english">By <strong>Malik Peter Koch Hansen</strong> &bull; 31 January 2026</span>
+                <span class="lang-content" data-lang="danish">Af <strong>Malik Peter Koch Hansen</strong> &bull; 31. januar 2026</span>
+                <span class="lang-content" data-lang="greenlandic">Allattoq <strong>Malik Peter Koch Hansen</strong> &bull; 31. januaari 2026</span>
             </div>
         </div>
     </header>
@@ -178,15 +231,35 @@
         <div class="article-content">
             
             <p class="lead-text" style="font-weight: 600; font-size: 1.5rem; margin-bottom: 3rem; color: var(--arctic-navy);">
-                As of January 2026, Greenland has finalized a comprehensive modernization of its primary hubs, readying the nation for the projected surge in Arctic shipping and international travel routes.
+                <span class="lang-content active" data-lang="english">
+                    In 2026, it is expected that Greenland will have finalized a comprehensive modernization of its primary hubs, readying the nation for the projected surge in Arctic shipping and international travel routes.
+                </span>
+                <span class="lang-content" data-lang="danish">
+                    I 2026 forventes Grønland at afslutte en omfattende modernisering af sine primære knudepunkter og gjort nationen klar til den forventede stigning i arktisk skibsfart og internationale rejseruter.
+                </span>
+                <span class="lang-content" data-lang="greenlandic">
+                    2026-mi aallarnerfigalugu nunatta angallannikkut qitiusoqarfiit pingaarnersaat nutarterneqarnerat naammassinissaat aallaavigineqarput, tamatumalu nuna umiarsuit nunat immallu issittut avannarlikkoorlutik angalasut timmisartullu aqqutaasa annertusinissaannut piareernerulersimassapput.
+                </span>
             </p>
             
             <p>
-                This status update confirms that the nation's key commercial and logistical centers—Ilulissat in the north, Nuuk in the central region, and Qaqortoq in the south—have completed the technical upgrades necessary to support a high-volume maritime and aviation economy. This development marks the definitive transition away from the inland Kangerlussuaq hub toward direct coastal access at Greenland's major population centers.
+                <span class="lang-content active" data-lang="english">
+                    This status update confirms that the nation's key commercial and logistical centers—Ilulissat in the north, Nuuk in the central region, and Qaqortoq in the south—have completed the technical upgrades necessary to support a high-volume maritime and aviation economy. This development marks the definitive transition away from the inland Kangerlussuaq hub toward direct coastal access at Greenland's major population centers.
+                </span>
+                <span class="lang-content" data-lang="danish">
+                    Denne statusopdatering bekræfter, at nationens vigtigste kommercielle og logistiske centre – Ilulissat i nord, Nuuk i hovedstadsregionen og Qaqortoq i syd – har færdiggjort de tekniske opgraderinger, der er nødvendige for at understøtte en maritim og luftfartsøkonomi med høj volumen. Denne udvikling markerer den definitive overgang væk fra det indlandske knudepunkt i Kangerlussuaq mod direkte kystadgang ved Grønlands større befolkningscentre.
+                </span>
+                <span class="lang-content" data-lang="greenlandic">
+                    Killiffik una uppernarsaavoq nuna tamakkerlugu niuernikkut logistikkikkullu qitiusoqarfiit – Avannaani Ilulissat, Qeqqani Nuuk, Kujataanilu Qaqortoq – teknikkikkut pisariaqartitat naammassineqarsimasut. Tamanna Kangerlussuup qitiusoqarfiuneranit nunaqarfiit annersaannut toqqaannartumik tikinneqarsinnaanngornerannut ikaarsaariarneruvoq.
+                </span>
             </p>
 
             <div class="map-section">
-                <h4 style="text-align:center; margin-bottom:2rem; font-family:'Playfair Display', serif;">Strategic Hub Status: January 2026</h4>
+                <h4 style="text-align:center; margin-bottom:2rem; font-family:'Playfair Display', serif;">
+                    <span class="lang-content active" data-lang="english">Strategic Hub Status: January 2026</span>
+                    <span class="lang-content" data-lang="danish">Status for Strategiske Knudepunkter: Januar 2026</span>
+                    <span class="lang-content" data-lang="greenlandic">Periusissatigut Qitiusoqarfiit Killiffigisaat: Januaari 2026</span>
+                </h4>
                 <div class="map-container">
                     
                     <div class="map-visual">
@@ -211,37 +284,95 @@
                     <div class="map-info-panel" id="info-panel">
                         <div class="default-msg">
                             <i class="fas fa-ship" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
-                            Hover over a strategic hub to view its current readiness status for 2026.
+                            <span class="lang-content active" data-lang="english">Hover over a strategic hub to view its current readiness status for 2026.</span>
+                            <span class="lang-content" data-lang="danish">Hold musen over et strategisk knudepunkt for at se beredskabsstatus for 2026.</span>
+                            <span class="lang-content" data-lang="greenlandic">Qitiusoqarfik tooruk 2026-mi piareersimassusia takuniarlugu.</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">Aviation Hub Modernization</h3>
+            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">
+                <span class="lang-content active" data-lang="english">Aviation Hub Modernization</span>
+                <span class="lang-content" data-lang="danish">Modernisering af Luftfartsknudepunkter</span>
+                <span class="lang-content" data-lang="greenlandic">Mittarfeqarfiit Nutarterneqarnerat</span>
+            </h3>
             <p>
-                The shift to direct coastal entry is now a logistical reality. <strong>Nuuk International (GOH)</strong>, the central artery for government and commerce, is fully operational for wide-body aircraft with a new Terminal Control Area (TMA) active as of this month. In the north, <strong>Ilulissat International (JAV)</strong> is undergoing final commissioning for its October 2026 opening, providing a direct gateway for Disko Bay. In the south, the <strong>Qaqortoq Regional</strong> airport is finalized and slated for its official opening on April 16, 2026, establishing the first fixed-wing connection for the region.
+                <span class="lang-content active" data-lang="english">
+                    The shift to direct coastal entry is now a logistical reality. <strong>Nuuk International (GOH)</strong>, the central artery for government and commerce, is fully operational for wide-body aircraft with a new Terminal Control Area (TMA) active as of this month. In the north, <strong>Ilulissat International (JAV)</strong> is undergoing final commissioning for its October 2026 opening, providing a direct gateway for Disko Bay. In the south, the <strong>Qaqortoq Regional</strong> airport is finalized and slated for its official opening on April 16, 2026, establishing the first fixed-wing connection for the region.
+                </span>
+                <span class="lang-content" data-lang="danish">
+                    Skiftet til direkte kystadgang er nu en logistisk realitet. <strong>Nuuk International (GOH)</strong>, den centrale hovedpulsåre for regering og handel, er fuldt operationel for wide-body fly med et nyt Terminal Control Area (TMA), der er aktivt fra denne måned. I nord gennemgår <strong>Ilulissat International (JAV)</strong> den sidste idriftsættelse inden åbningen i oktober 2026, hvilket giver en direkte port til Disko-bugten. I syd er <strong>Qaqortoq Regional</strong> lufthavn færdiggjort og planlagt til officiel åbning den 16. april 2026, hvilket etablerer den første forbindelse med fastvingede fly for regionen.
+                </span>
+                <span class="lang-content" data-lang="greenlandic">
+                    Sinerissap toqqaannartumik tikinneqarsinnaanngornera maanna piviusunngorpoq. <strong>Nuuk International (GOH)</strong>, naalakkersuinikkut niuernikkullu qitiusoq, maanna timmisartorsuarnit tikinneqarsinnaanngorpoq, qaammammi uani Terminal Control Area (TMA) nutaaq atuutilerluni. Avannaani <strong>Ilulissat International (JAV)</strong> oktobarimi 2026-mi ammanissaanut piareersarneqarpoq, Qeqertarsuup Tunuani toqqaannartumik tikinneqarsinnaanngorluni. Kujataani <strong>Qaqortup Mittarfia</strong> naammassineqareerpoq, apriilillu 16-anni 2026-mi pisortatigoortumik ammarneqassalluni, taamaalilluni timmisartunut suluusalinnut aqqutissiuussilluni.
+                </span>
             </p>
 
-            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">Maritime Readiness and Environmental Security</h3>
+            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">
+                <span class="lang-content active" data-lang="english">Maritime Readiness and Environmental Security</span>
+                <span class="lang-content" data-lang="danish">Maritimt Beredskab og Miljøsikkerhed</span>
+                <span class="lang-content" data-lang="greenlandic">Imarsiornikkut Piareersimassuseq Avatangiisinillu Isumannaallisaaneq</span>
+            </h3>
             <p>
-                Greenland’s primary ports have been integrated into a new "Blue Economy" framework to manage increased traffic from the Northern Sea Route. Nuuk’s port expansion now features advanced environmental monitoring to track water quality and emissions, ensuring that the surge in maritime commerce complies with the national 2026 sustainability mandates. 
+                <span class="lang-content active" data-lang="english">
+                    Greenland’s primary ports have been integrated into a new "Blue Economy" framework to manage increased traffic from the Northern Sea Route. Nuuk’s port expansion now features advanced environmental monitoring to track water quality and emissions, ensuring that the surge in maritime commerce complies with the national 2026 sustainability mandates.
+                </span>
+                <span class="lang-content" data-lang="danish">
+                    Grønlands primære havne er blevet integreret i en ny "Blå Økonomi"-ramme for at håndtere øget trafik fra den Nordlige Søvej. Nuuks havneudvidelse omfatter nu avanceret miljøovervågning til at spore vandkvalitet og emissioner, hvilket sikrer, at stigningen i maritim handel overholder de nationale bæredygtighedsmandater for 2026.
+                </span>
+                <span class="lang-content" data-lang="greenlandic">
+                    Kalaallit Nunaata umiarsualiviisa pingaarnersaat "Aningaasaqarneq Tungujortoq" (Blue Economy) aqqutigalugu aaqqissuunneqarput, Umiarsuit Aqqutaannit avannarlerneersut aqunniarlugit. Nuummi umiarsualiviup allineqarnerani maanna immap pitsaassusianik gassinillu aniatitsinermik uuttortaatit atulernikuuai, umiarsuit angallannerulernissaat 2026-mi piujuartitsinermut piumasaqaatinut naapertuuttuunissaat qulakkeerniarlugu.
+                </span>
             </p>
             <p>
-                The southern hub of Qaqortoq is specifically positioned to support the <strong>Critical Metals Pilot Plant</strong>, operational in May 2026, ensuring that Greenland can process and export resources directly through ice-free lanes. To support this nationwide increase in activity, primary Search and Rescue (SAR) assets and the Air Greenland H225 fleet have been centralized in Nuuk, providing a 90-minute rapid response capability across the high-traffic Davis Strait.
+                <span class="lang-content active" data-lang="english">
+                    The southern hub of Qaqortoq is specifically positioned to support the <strong>Critical Metals Pilot Plant</strong>, operational in May 2026, ensuring that Greenland can process and export resources directly through ice-free lanes. To support this nationwide increase in activity, primary Search and Rescue (SAR) assets and the Air Greenland H225 fleet have been centralized in Nuuk, providing a 90-minute rapid response capability across the high-traffic Davis Strait.
+                </span>
+                <span class="lang-content" data-lang="danish">
+                    Det sydlige knudepunkt i Qaqortoq er specifikt positioneret til at støtte <strong>Pilotanlægget for Kritiske Metaller</strong>, der bliver operationelt i maj 2026, hvilket sikrer, at Grønland kan forarbejde og eksportere ressourcer direkte gennem isfrie baner. For at støtte denne landsdækkende stigning i aktivitet er primære Search and Rescue (SAR) aktiver og Air Greenlands H225-flåde blevet centraliseret i Nuuk, hvilket giver en 90-minutters hurtig responskapacitet på tværs af det trafikerede Davis Stræde.
+                </span>
+                <span class="lang-content" data-lang="greenlandic">
+                    Kujataani Qaqortoq <strong>Aatsitassanut Qaqutigoortunut Misileraavimmut</strong>, maajimi 2026-mi atulertussamut, qitiussaaq, taamaalilluni isumalluutit suliarineqarlutillu sikueqqaartukkut annissat toqqaannartumik aqqutissiuunneqassallutik. Nuna tamakkerlugu suliaqarnerulernissaq tapersersorniarlugu, annaassiniarnermut (SAR) atortut Air Greenlandillu H225-flåde-a Nuummut katersuunneqarput, Davis Strædemi angallaffioqisumi 90 minutsit iluanni qisuariarsinnaanngorlutik.
+                </span>
             </p>
 
-            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">Diplomatic and Regulatory Oversight</h3>
+            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">
+                <span class="lang-content active" data-lang="english">Diplomatic and Regulatory Oversight</span>
+                <span class="lang-content" data-lang="danish">Diplomatisk og Lovgivningsmæssigt Tilsyn</span>
+                <span class="lang-content" data-lang="greenlandic">Diplomatiikkut Inatsisitigullu Nakkutilliineq</span>
+            </h3>
             <p>
-                With the opening of new shipping routes comes a heightened need for sovereign oversight. The January 2026 status confirms that the diplomatic presence in Nuuk has expanded, with Canada and France joining the United States in establishing consulates to tighten relations with Greenland and manage future circumpolar trade. This presence facilitates the coordination of stricter environmental regulations, including the enforcement of the Heavy Fuel Oil (HFO) ban for all vessels operating within Greenlandic territorial waters.
+                <span class="lang-content active" data-lang="english">
+                    With the opening of new shipping routes comes a heightened need for sovereign oversight. The January 2026 status confirms that the diplomatic presence in Nuuk has expanded, with Canada and France joining the United States in establishing consulates to tighten relations with Greenland and manage future circumpolar trade. This presence facilitates the coordination of stricter environmental regulations, including the enforcement of the Heavy Fuel Oil (HFO) ban for all vessels operating within Greenlandic territorial waters.
+                </span>
+                <span class="lang-content" data-lang="danish">
+                    Med åbningen af nye skibsruter følger et øget behov for suverænitets-tilsyn. Statusopdateringen fra januar 2026 bekræfter, at den diplomatiske tilstedeværelse i Nuuk er udvidet, hvor Canada og Frankrig har sluttet sig til USA i etableringen af konsulater for at styrke relationerne til Grønland og håndtere fremtidig cirkumpolar handel. Denne tilstedeværelse faciliterer koordineringen af strengere miljøreguleringer, herunder håndhævelsen af forbuddet mod tungolie (HFO) for alle fartøjer, der opererer i grønlandsk territorialfarvand.
+                </span>
+                <span class="lang-content" data-lang="greenlandic">
+                    Umiarsuit aqqutaasa nutaat ammarneqarnerisigut oqartussaaffiup nakkutigineqarnissaa pisariaqalerpoq. Januaari 2026-mi killiffiup uppernarsarpaa Nuummi diplomatiikkut najuunneq annertusisoq, Canada aamma Frankrig USA-mut ilanngullutik konsulatinik pilersitsimmata, tamatumalu Kalaallit Nunaannut attaveqarneq nukittorsarlugulu siunissami issittumi niuerneq aqutarissavaat. Tamanna avatangiisitigut malittarisassat sukannernerusut ataqatigiissaarneqarnissaannut iluaqutaassaaq, ilaatigut Heavy Fuel Oil-imik (HFO) atuinerup inerteqqutaalerneranut, umiarsuarnut Kalaallit Nunaata imartaani angalasunut tamanut atuuttumik.
+                </span>
             </p>
         </div>
 
         <section class="author-box">
             <div class="author-info">
-                <span class="author-role">Author</span>
+                <span class="author-role">
+                    <span class="lang-content active" data-lang="english">Author</span>
+                    <span class="lang-content" data-lang="danish">Forfatter</span>
+                    <span class="lang-content" data-lang="greenlandic">Allattoq</span>
+                </span>
                 <h3><a href="../../author/malik_peter_koch_hansen/" style="text-decoration: none; color: inherit;">Malik Peter Koch Hansen</a></h3>
                 <p class="author-bio">
-                    Malik Peter Koch Hansen is the Chair of the Greenland Foreign Policy Society. He specializes in Arctic infrastructure development and ensuring Greenland's operational readiness in the global maritime landscape.
+                    <span class="lang-content active" data-lang="english">
+                        Malik Peter Koch Hansen is the Chair of the Greenland Foreign Policy Society. He specializes in Arctic infrastructure development and ensuring Greenland's operational readiness in the global maritime landscape.
+                    </span>
+                    <span class="lang-content" data-lang="danish">
+                        Malik Peter Koch Hansen er formand for Det Grønlandske Udenrigspolitiske Selskab. Han specialiserer sig i arktisk infrastrukturudvikling og sikring af Grønlands operationelle beredskab i det globale maritime landskab.
+                    </span>
+                    <span class="lang-content" data-lang="greenlandic">
+                        Malik Peter Koch Hansen tassaavoq Kalaallit Nunaanni Nunanut Allanut Politikkimut Peqatigiiffiup siulittaasua. Issittumi attaveqaasersuutit ineriartortinneqarnerat aammalu Kalaallit Nunaata nunarsuarmioqatigiit imarsiorneranni piareersimassusiata qulakkeerneqarnissaa immikkut ilisimasarivai.
+                    </span>
                 </p>
             </div>
         </section>
@@ -259,10 +390,85 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Greenland Foreign Policy Society | <a href="../../about.html">Articles of Association</a></p>
+                <p>
+                    <span class="lang-content active" data-lang="english">&copy; 2026 Greenland Foreign Policy Society | <a href="../../about.html">Articles of Association</a></span>
+                    <span class="lang-content" data-lang="danish">&copy; 2026 Det Grønlandske Udenrigspolitiske Selskab | <a href="../../about.html">Vedtægter</a></span>
+                    <span class="lang-content" data-lang="greenlandic">&copy; 2026 Kalaallit Nunaanni Nunanut Allanut Politikkimut Peqatigiiffik | <a href="../../about.html">Malittarisassat</a></span>
+                </p>
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-button');
+            const langContents = document.querySelectorAll('.lang-content');
+            
+            const STORAGE_KEY = 'nunanut_global_lang'; 
+
+            function setLanguage(lang) {
+                localStorage.setItem(STORAGE_KEY, lang);
+                
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+
+                langContents.forEach(content => {
+                    content.classList.toggle('active', content.dataset.lang === lang);
+                });
+
+                const htmlLang = lang === 'greenlandic' ? 'kl' : lang === 'danish' ? 'da' : 'en';
+                document.documentElement.lang = htmlLang;
+            }
+
+            const savedLang = localStorage.getItem(STORAGE_KEY);
+            const initialLang = savedLang || 'english';
+            setLanguage(initialLang);
+
+            langButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(button.dataset.lang);
+                });
+            });
+
+            // --- Banner Logic ---
+            const devBanner = document.getElementById('dev-status-banner');
+            const closeBannerBtn = document.getElementById('close-banner');
+
+            function dismissBanner() {
+                if (devBanner) {
+                    devBanner.classList.add('banner-hidden');
+                    setTimeout(() => devBanner.style.display = 'none', 500);
+                }
+            }
+
+            if (closeBannerBtn) closeBannerBtn.addEventListener('click', dismissBanner);
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') dismissBanner();
+            });
+
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.insight-item-link');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filterValue = btn.getAttribute('data-filter');
+                    items.forEach(item => {
+                        item.style.display = (filterValue === 'all' || item.dataset.category === filterValue) ? 'block' : 'none';
+                    });
+                });
+            });
+
+            const openBtn = document.getElementById('mobile-menu-open');
+            const closeBtn = document.getElementById('mobile-menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if(openBtn) openBtn.addEventListener('click', () => mobileMenu.classList.add('active'));
+            if(closeBtn) closeBtn.addEventListener('click', () => mobileMenu.classList.remove('active'));
+        });
+    </script>
 
     <script>
         window.addEventListener('scroll', () => {
@@ -274,41 +480,110 @@
         const cityHotspots = document.querySelectorAll('.city-hotspot');
         const infoPanel = document.getElementById('info-panel');
 
+        // Expanded Data Object for Multilingual Support
         const cityData = {
             nuuk: {
-                title: "Nuuk (Central Hub)",
-                content: `
-                    <ul>
-                        <li><i class="fas fa-plane"></i> <strong>Aviation:</strong> Full international wide-body capacity and TMA active.</li>
-                        <li><i class="fas fa-shield-alt"></i> <strong>Security:</strong> National SAR headquarters and H225 rapid-response base.</li>
-                        <li><i class="fas fa-globe"></i> <strong>Diplomacy:</strong> Expanded consular presence for closer relations and future maritime oversight.</li>
-                    </ul>
-                `
+                english: {
+                    title: "Nuuk (Central Hub)",
+                    content: `
+                        <ul>
+                            <li><i class="fas fa-plane"></i> <strong>Aviation:</strong> Full international wide-body capacity and TMA active.</li>
+                            <li><i class="fas fa-shield-alt"></i> <strong>Security:</strong> National SAR headquarters and H225 rapid-response base.</li>
+                            <li><i class="fas fa-globe"></i> <strong>Diplomacy:</strong> Expanded consular presence for closer relations and future maritime oversight.</li>
+                        </ul>
+                    `
+                },
+                danish: {
+                    title: "Nuuk (Centralt Knudepunkt)",
+                    content: `
+                        <ul>
+                            <li><i class="fas fa-plane"></i> <strong>Luftfart:</strong> Fuld international wide-body kapacitet og aktiv TMA.</li>
+                            <li><i class="fas fa-shield-alt"></i> <strong>Sikkerhed:</strong> Nationalt SAR-hovedkvarter og H225 hurtig-respons base.</li>
+                            <li><i class="fas fa-globe"></i> <strong>Diplomati:</strong> Udvidet konsulær tilstedeværelse for tættere relationer og maritimt tilsyn.</li>
+                        </ul>
+                    `
+                },
+                greenlandic: {
+                    title: "Nuuk (Qeqqani Qitiusoqarfik)",
+                    content: `
+                        <ul>
+                            <li><i class="fas fa-plane"></i> <strong>Mittarfeqarfik:</strong> Nunani tamalaani timmisartorsuarnut aqqutissat aamma TMA.</li>
+                            <li><i class="fas fa-shield-alt"></i> <strong>Isumannaallisaaneq:</strong> Nuna tamakkerlugu SAR-imut qullersaqarfik aamma H225-mik upalungaarsimasut.</li>
+                            <li><i class="fas fa-globe"></i> <strong>Diplomati:</strong> Konsulatinik annertusaaneq attaveqaqatigiinnerup nukittorsarnissaanut.</li>
+                        </ul>
+                    `
+                }
             },
             ilulissat: {
-                title: "Ilulissat (North Hub)",
-                content: `
-                    <ul>
-                        <li><i class="fas fa-plane"></i> <strong>Aviation:</strong> Final commissioning phase for Oct 2026 international opening.</li>
-                        <li><i class="fas fa-ship"></i> <strong>Shipping:</strong> Primary northern logistical staging for Disko Bay traffic.</li>
-                    </ul>
-                `
+                english: {
+                    title: "Ilulissat (North Hub)",
+                    content: `
+                        <ul>
+                            <li><i class="fas fa-plane"></i> <strong>Aviation:</strong> Final commissioning phase for Oct 2026 international opening.</li>
+                            <li><i class="fas fa-ship"></i> <strong>Shipping:</strong> Primary northern logistical staging for Disko Bay traffic.</li>
+                        </ul>
+                    `
+                },
+                danish: {
+                    title: "Ilulissat (Nordligt Knudepunkt)",
+                    content: `
+                        <ul>
+                            <li><i class="fas fa-plane"></i> <strong>Luftfart:</strong> Sidste idriftsættelsesfase før international åbning i okt. 2026.</li>
+                            <li><i class="fas fa-ship"></i> <strong>Skibsfart:</strong> Primær nordlig logistisk base for trafik i Disko-bugten.</li>
+                        </ul>
+                    `
+                },
+                greenlandic: {
+                    title: "Ilulissat (Avannaani Qitiusoqarfik)",
+                    content: `
+                        <ul>
+                            <li><i class="fas fa-plane"></i> <strong>Mittarfeqarfik:</strong> Oktobarimi 2026-mi ammanissaanut piareersarlugu misileraaneq kingulleq.</li>
+                            <li><i class="fas fa-ship"></i> <strong>Umiarsualivik:</strong> Qeqertarsuup Tunuani angallannermut logistikki qitiusoq.</li>
+                        </ul>
+                    `
+                }
             },
             qaqortoq: {
-                title: "Qaqortoq (South Hub)",
-                content: `
-                    <ul>
-                        <li><i class="fas fa-plane-arrival"></i> <strong>Aviation:</strong> Opening April 16, 2026; first regional fixed-wing hub.</li>
-                        <li><i class="fas fa-industry"></i> <strong>Logistics:</strong> Staging hub for Critical Metals export (Operational May 2026).</li>
-                    </ul>
-                `
+                english: {
+                    title: "Qaqortoq (South Hub)",
+                    content: `
+                        <ul>
+                            <li><i class="fas fa-plane-arrival"></i> <strong>Aviation:</strong> Opening April 16, 2026; first regional fixed-wing hub.</li>
+                            <li><i class="fas fa-industry"></i> <strong>Logistics:</strong> Staging hub for Critical Metals export (Operational May 2026).</li>
+                        </ul>
+                    `
+                },
+                danish: {
+                    title: "Qaqortoq (Sydligt Knudepunkt)",
+                    content: `
+                        <ul>
+                            <li><i class="fas fa-plane-arrival"></i> <strong>Luftfart:</strong> Åbner 16. april 2026; første regionale hub for fastvingede fly.</li>
+                            <li><i class="fas fa-industry"></i> <strong>Logistik:</strong> Knudepunkt for eksport af kritiske metaller (Operationel maj 2026).</li>
+                        </ul>
+                    `
+                },
+                greenlandic: {
+                    title: "Qaqortoq (Kujataani Qitiusoqarfik)",
+                    content: `
+                        <ul>
+                            <li><i class="fas fa-plane-arrival"></i> <strong>Mittarfeqarfik:</strong> Ammassaaq 16. apriili 2026; suluusalinnut qitiusoq siulleq.</li>
+                            <li><i class="fas fa-industry"></i> <strong>Logistikki:</strong> Aatsitassanut qaqutigoortunut annissinissamut qitiusoq (Maaji 2026-mi atulissaaq).</li>
+                        </ul>
+                    `
+                }
             }
         };
 
         cityHotspots.forEach(hotspot => {
             hotspot.addEventListener('mouseenter', () => {
                 const city = hotspot.getAttribute('data-city');
-                const data = cityData[city];
+                
+                // Get the current language from LocalStorage, default to English if missing
+                const currentLang = localStorage.getItem('nunanut_global_lang') || 'english';
+                
+                // Fetch the data based on city and language
+                const data = cityData[city][currentLang] || cityData[city]['english']; // Fallback to English
+
                 infoPanel.innerHTML = `
                     <div class="entrance-animation" style="animation-duration: 0.5s;">
                         <h3 class="info-title">${data.title}</h3>
