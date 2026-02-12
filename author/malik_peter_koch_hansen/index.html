@@ -10,7 +10,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body class="author-page"> 
+<div class="dev-banner" id="dev-status-banner">
+        <div class="dev-banner-content">
+            <div class="dev-left">
+                <span class="pulse-icon"></span>
+                <span class="lang-content active" data-lang="english">Site Under Development (this is a demo)</span>
+                <span class="lang-content" data-lang="greenlandic">Nittartagaq suli naammassinngilaq (massakkut demo-naavoq)</span>
+                <span class="lang-content" data-lang="danish">Siden er under udvikling (dette er blot en demo)</span>
+            </div>
+            <div class="dev-right">
+                <div class="dev-progress-container">
+                    <div class="dev-progress-fill"></div>
+                </div>
+                <button class="dev-close" id="close-banner" title="Close (Esc)">&times;</button>
+            </div>
+        </div>
+    </div>
+
     <nav class="site-nav scrolled" id="main-nav">
         <div class="nav-container">
             <div class="nav-brand"><a href="../../index.html" class="logo-text">NUNANUT</a></div>
@@ -157,17 +175,21 @@
         </div>
     </footer>
 
-    <script>
+<script>
         document.addEventListener('DOMContentLoaded', function() {
             const langButtons = document.querySelectorAll('.lang-button');
+            const langContents = document.querySelectorAll('.lang-content');
             const STORAGE_KEY = 'nunanut_global_lang'; 
 
             function setLanguage(lang) {
                 localStorage.setItem(STORAGE_KEY, lang);
                 langButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-                document.querySelectorAll('.lang-content').forEach(el => {
+                langContents.forEach(el => {
                     el.classList.toggle('active', el.dataset.lang === lang);
                 });
+                
+                const htmlLang = lang === 'greenlandic' ? 'kl' : lang === 'danish' ? 'da' : 'en';
+                document.documentElement.lang = htmlLang;
             }
 
             const savedLang = localStorage.getItem(STORAGE_KEY) || 'english';
@@ -175,6 +197,23 @@
 
             langButtons.forEach(button => {
                 button.addEventListener('click', () => setLanguage(button.dataset.lang));
+            });
+
+            // --- Banner Logic (Matches Insights.html) ---
+            const devBanner = document.getElementById('dev-status-banner');
+            const closeBannerBtn = document.getElementById('close-banner');
+
+            function dismissBanner() {
+                if (devBanner) {
+                    devBanner.classList.add('banner-hidden');
+                    setTimeout(() => devBanner.style.display = 'none', 500);
+                }
+            }
+
+            if (closeBannerBtn) closeBannerBtn.addEventListener('click', dismissBanner);
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') dismissBanner();
             });
         });
     </script>

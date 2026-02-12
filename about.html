@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Articles of Association | NUNANUT</title>
@@ -10,6 +12,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="dev-banner" id="dev-status-banner">
+        <div class="dev-banner-content">
+            <div class="dev-left">
+                <span class="pulse-icon"></span>
+                <span class="lang-content active" data-lang="english">Site Under Development (this is a demo)</span>
+                <span class="lang-content" data-lang="greenlandic">Nittartagaq suli naammassinngilaq (massakkut demo-naavoq)</span>
+                <span class="lang-content" data-lang="danish">Siden er under udvikling (dette er blot en demo)</span>
+            </div>
+            <div class="dev-right">
+                <div class="dev-progress-container">
+                    <div class="dev-progress-fill"></div>
+                </div>
+                <button class="dev-close" id="close-banner" title="Close (Esc)">&times;</button>
+            </div>
+        </div>
+    </div>
+
 
     <style>
         .article-page { background-color: var(--slate-light); }
@@ -218,7 +238,7 @@
         </div>
     </main>
 
-    <script>
+<script>
         document.addEventListener('DOMContentLoaded', function() {
             const langButtons = document.querySelectorAll('.lang-button');
             const langContents = document.querySelectorAll('.lang-content');
@@ -227,14 +247,36 @@
             function setLanguage(lang) {
                 localStorage.setItem(STORAGE_KEY, lang);
                 langButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-                langContents.forEach(content => content.classList.toggle('active', content.dataset.lang === lang));
+                langContents.forEach(el => {
+                    el.classList.toggle('active', el.dataset.lang === lang);
+                });
+                
+                const htmlLang = lang === 'greenlandic' ? 'kl' : lang === 'danish' ? 'da' : 'en';
+                document.documentElement.lang = htmlLang;
             }
 
-            const initialLang = localStorage.getItem(STORAGE_KEY) || 'english';
-            setLanguage(initialLang);
+            const savedLang = localStorage.getItem(STORAGE_KEY) || 'english';
+            setLanguage(savedLang);
 
             langButtons.forEach(button => {
                 button.addEventListener('click', () => setLanguage(button.dataset.lang));
+            });
+
+            // --- Banner Logic (Matches Insights.html) ---
+            const devBanner = document.getElementById('dev-status-banner');
+            const closeBannerBtn = document.getElementById('close-banner');
+
+            function dismissBanner() {
+                if (devBanner) {
+                    devBanner.classList.add('banner-hidden');
+                    setTimeout(() => devBanner.style.display = 'none', 500);
+                }
+            }
+
+            if (closeBannerBtn) closeBannerBtn.addEventListener('click', dismissBanner);
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') dismissBanner();
             });
         });
     </script>
