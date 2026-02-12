@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 2026 Update: Greenland’s Maritime & Aviation Readiness | NUNANUT</title>
+    
+    <link rel="stylesheet" href="../../style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- INTERACTIVE MAP STYLES --- */
+        .map-section {
+            margin: 4rem 0;
+            background: #f8fafc;
+            border-radius: 1rem;
+            border: 1px solid #e2e8f0;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .map-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .map-visual {
+            position: relative;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .map-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .city-hotspot {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hotspot-pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #d21034;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.3s ease;
+        }
+
+        .hotspot-center {
+            width: 8px;
+            height: 8px;
+            background-color: transparent;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .city-hotspot:hover .hotspot-pulse {
+            opacity: 1;
+            animation: pulse-ring 1.5s infinite;
+        }
+
+        .city-hotspot:hover .hotspot-center {
+            background-color: #d21034;
+            box-shadow: 0 0 10px rgba(210, 16, 52, 0.5);
+        }
+
+        .map-info-panel {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #d21034;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .info-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .info-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-content li {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: #64748b;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .info-content li i {
+            color: #d21034;
+            margin-top: 5px;
+        }
+
+        .default-msg {
+            color: #94a3b8;
+            font-style: italic;
+            text-align: center;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+
+        @media (max-width: 900px) {
+            .map-container { grid-template-columns: 1fr; }
+            .map-info-panel { min-height: auto; margin-top: 1rem; }
+        }
+    </style>
+</head>
+<body class="article-page"> 
+
+    <nav class="site-nav" id="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand"><a href="../../index.html" class="logo-text">NUNANUT</a></div>
+            <ul class="nav-links">
+                <li><a href="../../index.html#mission" class="lang-content active" data-lang="english">Mission</a></li>
+                <li><a href="../../insights.html" class="lang-content active" data-lang="english">Insights</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="language-selector">
+                    <button class="lang-button" data-lang="greenlandic">KL</button>
+                    <button class="lang-button" data-lang="danish">DA</button>
+                    <button class="lang-button active" data-lang="english">EN</button>
+                </div>
+                <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="article-hero">
+        <img src="arctic-view.jpg" alt="Arctic Maritime Update" class="hero-image">
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-text-content entrance-animation">
+<br>
+            <span class="article-tag">Briefing: 2026 New Year Update</span>
+            <h1>Greenland’s Readiness for New Shipping and Travel</h1>
+            <div class="hero-divider"></div>
+            <div class="article-meta-info">
+                By <strong>Malik Peter Koch Hansen</strong> &bull; 31 January 2026
+            </div>
+        </div>
+    </header>
+
+    <main class="container narrow article-body">
+        <div class="article-content">
+            
+            <p class="lead-text" style="font-weight: 600; font-size: 1.5rem; margin-bottom: 3rem; color: var(--arctic-navy);">
+                As of January 2026, Greenland has finalized a comprehensive modernization of its primary hubs, readying the nation for the projected surge in Arctic shipping and international travel routes.
+            </p>
+            
+            <p>
+                This status update confirms that the nation's key commercial and logistical centers—Ilulissat in the north, Nuuk in the central region, and Qaqortoq in the south—have completed the technical upgrades necessary to support a high-volume maritime and aviation economy. This development marks the definitive transition away from the inland Kangerlussuaq hub toward direct coastal access at Greenland's major population centers.
+            </p>
+
+            <div class="map-section">
+                <h4 style="text-align:center; margin-bottom:2rem; font-family:'Playfair Display', serif;">Strategic Hub Status: January 2026</h4>
+                <div class="map-container">
+                    
+                    <div class="map-visual">
+                        <img src="greenlandmap.jpg" alt="Map of Greenland Infrastructure Hubs" class="map-image">
+
+                        <div class="city-hotspot" style="top: 60.5%; left: 29%;" data-city="ilulissat">
+                            <div class="hotspot-pulse"></div>
+                            <div class="hotspot-center"></div>
+                        </div>
+
+                        <div class="city-hotspot" style="top: 80.3%; left: 24.8%;" data-city="nuuk">
+                            <div class="hotspot-pulse"></div>
+                            <div class="hotspot-center"></div>
+                        </div>
+
+                        <div class="city-hotspot" style="top: 93.9%; left: 39.5%;" data-city="qaqortoq">
+                            <div class="hotspot-pulse"></div>
+                            <div class="hotspot-center"></div>
+                        </div>
+                    </div>
+
+                    <div class="map-info-panel" id="info-panel">
+                        <div class="default-msg">
+                            <i class="fas fa-ship" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+                            Hover over a strategic hub to view its current readiness status for 2026.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">Aviation Hub Modernization</h3>
+            <p>
+                The shift to direct coastal entry is now a logistical reality. <strong>Nuuk International (GOH)</strong>, the central artery for government and commerce, is fully operational for wide-body aircraft with a new Terminal Control Area (TMA) active as of this month. In the north, <strong>Ilulissat International (JAV)</strong> is undergoing final commissioning for its October 2026 opening, providing a direct gateway for Disko Bay. In the south, the <strong>Qaqortoq Regional</strong> airport is finalized and slated for its official opening on April 16, 2026, establishing the first fixed-wing connection for the region.
+            </p>
+
+            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">Maritime Readiness and Environmental Security</h3>
+            <p>
+                Greenland’s primary ports have been integrated into a new "Blue Economy" framework to manage increased traffic from the Northern Sea Route. Nuuk’s port expansion now features advanced environmental monitoring to track water quality and emissions, ensuring that the surge in maritime commerce complies with the national 2026 sustainability mandates. 
+            </p>
+            <p>
+                The southern hub of Qaqortoq is specifically positioned to support the <strong>Critical Metals Pilot Plant</strong>, operational in May 2026, ensuring that Greenland can process and export resources directly through ice-free lanes. To support this nationwide increase in activity, primary Search and Rescue (SAR) assets and the Air Greenland H225 fleet have been centralized in Nuuk, providing a 90-minute rapid response capability across the high-traffic Davis Strait.
+            </p>
+
+            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">Diplomatic and Regulatory Oversight</h3>
+            <p>
+                With the opening of new shipping routes comes a heightened need for sovereign oversight. The January 2026 status confirms that the diplomatic presence in Nuuk has expanded, with Canada and France joining the United States in establishing consulates to tighten relations with Greenland and manage future circumpolar trade. This presence facilitates the coordination of stricter environmental regulations, including the enforcement of the Heavy Fuel Oil (HFO) ban for all vessels operating within Greenlandic territorial waters.
+            </p>
+        </div>
+
+        <section class="author-box">
+            <div class="author-info">
+                <span class="author-role">Author</span>
+                <h3><a href="../../author/malik_peter_koch_hansen/" style="text-decoration: none; color: inherit;">Malik Peter Koch Hansen</a></h3>
+                <p class="author-bio">
+                    Malik Peter Koch Hansen is the Chair of the Greenland Foreign Policy Society. He specializes in Arctic infrastructure development and ensuring Greenland's operational readiness in the global maritime landscape.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-text">NUNANUT</span>
+                    <div class="footer-contact-info">
+                        <p>3900 Nuuk, Greenland</p>
+                        <p>udenrigspolitiskforening@outlook.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Greenland Foreign Policy Society | <a href="../../about.html">Articles of Association</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        const cityHotspots = document.querySelectorAll('.city-hotspot');
+        const infoPanel = document.getElementById('info-panel');
+
+        const cityData = {
+            nuuk: {
+                title: "Nuuk (Central Hub)",
+                content: `
+                    <ul>
+                        <li><i class="fas fa-plane"></i> <strong>Aviation:</strong> Full international wide-body capacity and TMA active.</li>
+                        <li><i class="fas fa-shield-alt"></i> <strong>Security:</strong> National SAR headquarters and H225 rapid-response base.</li>
+                        <li><i class="fas fa-globe"></i> <strong>Diplomacy:</strong> Expanded consular presence for closer relations and future maritime oversight.</li>
+                    </ul>
+                `
+            },
+            ilulissat: {
+                title: "Ilulissat (North Hub)",
+                content: `
+                    <ul>
+                        <li><i class="fas fa-plane"></i> <strong>Aviation:</strong> Final commissioning phase for Oct 2026 international opening.</li>
+                        <li><i class="fas fa-ship"></i> <strong>Shipping:</strong> Primary northern logistical staging for Disko Bay traffic.</li>
+                    </ul>
+                `
+            },
+            qaqortoq: {
+                title: "Qaqortoq (South Hub)",
+                content: `
+                    <ul>
+                        <li><i class="fas fa-plane-arrival"></i> <strong>Aviation:</strong> Opening April 16, 2026; first regional fixed-wing hub.</li>
+                        <li><i class="fas fa-industry"></i> <strong>Logistics:</strong> Staging hub for Critical Metals export (Operational May 2026).</li>
+                    </ul>
+                `
+            }
+        };
+
+        cityHotspots.forEach(hotspot => {
+            hotspot.addEventListener('mouseenter', () => {
+                const city = hotspot.getAttribute('data-city');
+                const data = cityData[city];
+                infoPanel.innerHTML = `
+                    <div class="entrance-animation" style="animation-duration: 0.5s;">
+                        <h3 class="info-title">${data.title}</h3>
+                        <div class="info-content">${data.content}</div>
+                    </div>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
